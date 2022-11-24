@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-content: space-between;
   height: 300px;
+  color:#FFF;
 }
 
 .content-article-container header {
@@ -21,7 +22,7 @@ p.departement {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-size: 0.8rem;
-  color: rgb(101, 102, 103);
+  color: rgb(185, 187, 190);
 }
 
 h2 {
@@ -51,9 +52,20 @@ h2 {
 
 .content-button p {
   padding: 5px 10px;
-  background-color: rgb(95, 96, 96);
-  color: #fff;
+  background-color: rgba(95, 96, 96, 0);
+  color: rgb(155, 187, 210);
   border-radius: 50px;
+  border: 1px rgb(155, 187, 210) solid;
+  font-size: 0.7rem;
+  margin-block-end: 0em;
+}
+
+.content-button p:hover {
+  padding: 5px 10px;
+  background-color: rgba(95, 96, 96, 0.283);
+  color: rgb(224, 233, 239);
+  border-radius: 50px;
+  border: 1px rgb(224, 233, 239) solid;
   font-size: 0.7rem;
   margin-block-end: 0em;
 }

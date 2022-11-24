@@ -5,11 +5,15 @@ import Article from "./article/Article";
 
 const Content = () => {
   return (
-    <div className="content-container">
-      <FeatureImage />
-      <Article />
+    <div className="blurBG">
+      <div className="content-container">
+        <FeatureImage />
+        <Article />
+      </div>
     </div>
   );
 };
+
+//document.querySelector(".blurBG").style.filter = "blur(10px)";
 
 export default Content;
