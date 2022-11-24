@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./Content.css";
 
-
-//import foodItems from "./data.js"; //le tableau d'objet
-import FeatureImage from "./FeatureImages/FeatureImage";
+import FeatureImage from "./FeatureImage/FeatureImage";
+import Article from "./article/Article";
 
 const Content = () => {
   return (
     <div className="content-container">
-      <p>Content Container</p>
+      <FeatureImage />
+      <Article />
     </div>
   );
 };
