@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Content.css";
-
 import FeatureImage from "./FeatureImage/FeatureImage";
 import Article from "./article/Article";
 

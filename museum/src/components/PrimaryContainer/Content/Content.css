@@ -5,5 +5,6 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-start;
-  gap:20px;
+  gap: 30px;
+  height: 300px;
 }

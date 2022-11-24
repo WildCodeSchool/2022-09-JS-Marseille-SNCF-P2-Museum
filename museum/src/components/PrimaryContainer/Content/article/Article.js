@@ -1,11 +1,26 @@
 import React from "react";
-//import "./Article.css"
+import "./Article.css";
 
 function Article() {
   return (
     <div className="content-article-container">
-      <h2>Titre de l'oeuvre</h2>
-      <p>Coucou</p>
+      <header>
+        <p className="departement">Département</p>
+        <h2>Titre de l'oeuvre</h2>
+        <ul>
+          <li>Coucou Fanny</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+        </ul>
+      </header>
+
+      <div className="content-button">
+        <p>Favorite</p>
+        <p>Social Share</p>
+      </div>
     </div>
   );
 }
