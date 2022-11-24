@@ -1,12 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Content from "./components/PrimaryContainer/Content/Content";
 
 function App() {
   return (
     <div className="App">
-      <PrimaryContainer />
-      <Gallery />
-      <Footer />
+      <Content />
     </div>
   );
 }
