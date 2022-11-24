@@ -1,3 +1,11 @@
 .NavBar{
     background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.navFilter{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
 }
