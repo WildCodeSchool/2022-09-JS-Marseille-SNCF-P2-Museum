@@ -4,10 +4,10 @@ import CardTitle from "./CardTitle";
 import CardIcon from "./CardIcon";
 import "./Gallery.css";
 
-const CardBody = () => {
+const CardBody = (props) => {
   return (
     <div className="gallery-card-body">
-      <CardImage />
+      <CardImage picture={props.picture} />
 
       <div className="gallery-card-footer">
         <CardTitle />
