@@ -8,12 +8,12 @@ const CardBody = () => {
   return (
     <div className="gallery-card-body">
       <CardImage />
+
       <div className="gallery-card-footer">
         <CardTitle />
-        <CardIcon />
+        <CardIcon isFavorite={"isFavorite"} />
       </div>
     </div>
   );
 };
-
 export default CardBody;

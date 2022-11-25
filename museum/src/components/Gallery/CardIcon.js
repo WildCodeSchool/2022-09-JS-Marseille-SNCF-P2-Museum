@@ -1,12 +1,23 @@
+import React, { useState } from 'react';
 
-import React from 'react';
 
-const CardIcon = () => {
+const CardIcon = (props) => {
+ 
+        const [isFavorite, setIsFavorite] = React.useState(props.isFavorite)
+      
+       function handleClickFavorite() {
+        console.log('click');
+         setIsFavorite(!isFavorite);
+         console.log(isFavorite);
+      }
+      
     return (
-        <div className="gallery-card-icon">
-        <p>Icon</p>
-            
-        </div>
+       
+         <div id="icon-gallery"className={isFavorite ? 'isFavorite' : 'notFavorite'}
+          onClick={handleClickFavorite}>
+          </div>
+              
+        
     );
 };
 
