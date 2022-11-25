@@ -2,10 +2,14 @@
     background-color: aqua;
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 49%;
+    gap:20px;
+}
+.NavLogo{
+    border-color: rgb(3, 3, 81);
 }
 .navFilter{
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
 }

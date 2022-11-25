@@ -1,9 +1,33 @@
+.blurBG {
+  background-image: url(https://picsum.photos/500/300);
+  filter: blur(0px);
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: all 20s linear;
+  -moz-transition: all 20s linear;
+  -webkit-transition: all 20s linear;
+  -o-transition: all 20s linear;
+}
+
 .content-container {
-  background-color: rgb(214, 216, 219);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-start;
-  gap:20px;
+  gap: 30px;
+  height: 300px;
+
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
 }

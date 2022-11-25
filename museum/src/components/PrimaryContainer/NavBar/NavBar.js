@@ -1,5 +1,5 @@
 import React from "react";
-import './NavBar.css'
+import './NavBar.css';
 import Logo from "./Logo";
 import Filter from "./Filter";
 import Icons from "./Icons";
