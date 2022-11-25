@@ -1,0 +1,35 @@
+.footer {
+  background-color: green;
+  height: 400px;
+}
+.footerLogo {
+  background-color: blue;
+  width: 25%;
+}
+
+.footerAbout {
+  background-color: purple;
+  width: 25%;
+}
+.footerAddress {
+background-color: orange;
+width: 30%;
+}
+
+.footerContent {
+  background-color: aquamarine;
+  padding: 10px;
+  display: flex;
+  justify-content: row;
+  gap:20px;
+  }
+
+  .footerMap {
+    background-color: palevioletred;
+    width: 25%;
+  }
+
+  .footerLegacy {
+     background-color: rgb(153, 185, 248);
+     text-align: center;
+  }

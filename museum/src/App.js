@@ -1,4 +1,4 @@
-import "./App.css";
+import './App.css';
 import PrimaryContainer from './components/PrimaryContainer/PrimaryContainer';
 import Gallery from './components/Gallery/Gallery';
 
