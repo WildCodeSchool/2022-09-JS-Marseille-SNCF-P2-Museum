@@ -6,7 +6,7 @@ const Gallery = () => {
     {
       title: "tableau 1",
       isFavorite: "",
-      picture: "https://picsum.photos/180/150",
+      picture: "https://picsum.photos/198/150",
     },
     {
       title: "",
