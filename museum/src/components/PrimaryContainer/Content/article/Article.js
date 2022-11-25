@@ -18,8 +18,8 @@ function Article() {
       </header>
 
       <div className="content-button">
+        <p>Next</p>
         <p>Favorite</p>
-        <p>Social Share</p>
       </div>
     </div>
   );

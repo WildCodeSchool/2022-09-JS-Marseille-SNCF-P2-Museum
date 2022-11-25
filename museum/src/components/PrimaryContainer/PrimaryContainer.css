@@ -1,6 +1,6 @@
 .PrimaryContainer {
   background-image: url(https://picsum.photos/500/300);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(78, 78, 78, 0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
