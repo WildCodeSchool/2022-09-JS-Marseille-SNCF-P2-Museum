@@ -5,12 +5,12 @@ import Article from "./article/Article";
 
 const Content = () => {
   return (
-    <div className="blurBG">
       <div className="content-container">
-        <FeatureImage />
-        <Article />
+        <div className="wrap">
+          <FeatureImage />
+          <Article />
+        </div>
       </div>
-    </div>
   );
 };
 

@@ -1,6 +1,12 @@
-.PrimaryContainer{
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.PrimaryContainer {
+  background-image: url(https://picsum.photos/500/300);
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -8,10 +8,10 @@ import FooterLegacy from "./FooterLegacy";
 const Footer = () => {
   return (
     <div className="footer">
-      <h2>Mon Footer</h2>
-          <FooterContent/>
-          <FooterLegacy/>
-      
+      <div className="wrap">
+        <FooterContent />
+        <FooterLegacy />
+      </div>
     </div>
   );
 };
