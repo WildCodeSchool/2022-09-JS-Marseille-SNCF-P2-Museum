@@ -1,13 +1,14 @@
 .gallery-body{
     width:100%;
     height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
     background-color: aqua;
 }
 
 
-.gallery-card-body{
+.gallery-card-body { 
     width:200px;
     height:200px;
    padding:10px;
@@ -15,7 +16,7 @@
 
 }
 .gallery-card-image {
-    border-radius: 5px 5px 5px 5px;
+border-color: black 1px 1px 1px 1px;
 }
 .gallery-card-footer {
     width:100%;
