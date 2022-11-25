@@ -1,0 +1,50 @@
+.footer {
+  display: flex;
+  background-color: rgb(149, 149, 149);
+  height: 400px;
+  justify-content: center;
+}
+
+.footer .wrap {
+  width: var(--wrap);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 40px;
+}
+
+.footerLogo {
+  background-color: blue;
+  width: 25%;
+}
+
+.footerAbout {
+  background-color: purple;
+  width: 25%;
+}
+.footerAddress {
+  background-color: orange;
+  width: 30%;
+}
+
+.footerContent {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: row;
+  gap: 20px;
+}
+
+.footerMap {
+  background-color: palevioletred;
+  width: 25%;
+}
+
+.footerLegacy {
+    text-align: center;
+    font-size: 10px;
+    width: 100%;
+    border-top: #666666 1px solid;
+}

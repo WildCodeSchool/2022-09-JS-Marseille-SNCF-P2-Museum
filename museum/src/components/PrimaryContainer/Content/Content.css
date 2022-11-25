@@ -1,0 +1,30 @@
+.content-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  height: 300px;
+  width: 100%;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
+}
+
+.content-container .wrap {
+  width: var(--wrap);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.content-container img {
+  border-radius: 3px;
+}
