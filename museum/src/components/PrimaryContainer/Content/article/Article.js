@@ -4,11 +4,19 @@ import "./Article.css";
 function Article() {
   return (
     <div className="content-article-container">
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      />
       <header>
         <p className="departement">Département</p>
-        <h2>Titre de l'oeuvre</h2>
+        <h1>Titre de l'oeuvre</h1>
         <ul>
-          <li>Coucou Fanny</li>
+          <li>lorem ipsum</li>
           <li>lorem ipsum</li>
           <li>lorem ipsum</li>
           <li>lorem ipsum</li>
@@ -18,8 +26,13 @@ function Article() {
       </header>
 
       <div className="content-button">
-        <p>Next</p>
-        <p>Favorite</p>
+        <p>
+          <span class="material-symbols-outlined">arrow_forward_ios</span>
+          Next
+        </p>
+        <p>
+          <span class="material-symbols-outlined">favorite</span>Favorite
+        </p>
       </div>
     </div>
   );
