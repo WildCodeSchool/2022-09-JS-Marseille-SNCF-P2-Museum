@@ -1,8 +1,8 @@
 import React from "react";
 import "./NavBar.css";
 import Logo from "./Logo";
-import Filter from "./Filter";
-import Icons from "./Icons";
+import Filter from "./filter/Filter"
+import NavButton from "./NavButton";
 
 function NavBar() {
   return (
@@ -10,7 +10,7 @@ function NavBar() {
       <div className="wrap">
         <Logo />
         <Filter />
-        <Icons />
+        <NavButton />
       </div>
     </div>
   );
