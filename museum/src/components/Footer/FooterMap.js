@@ -6,7 +6,9 @@ const FooterMap = () => {
   return (
     <div className="footerMap">
       <img src="./plan-google.png" alt="plan gris" />
-      <FooterMapButton />
+      <div>
+        <FooterMapButton />
+      </div>
       <FooterModalMap />
     </div>
   );
