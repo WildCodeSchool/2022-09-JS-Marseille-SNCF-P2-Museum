@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color:#E8DBCD;
   justify-items: center;
 }
 
@@ -19,21 +19,25 @@
 }
 
 .gallery-card-body {
-  width: 22%;
-  height: 200px;
+  width: 32%;
+  height: 250px;
   padding-bottom: 20px;
+  border-radius: 5px;
+  border: 1px black solid;
 }
 
-.gallery-card-image {
-  border-color: black 1px 1px 1px 1px;
-}
+/* .gallery-card-image { */
+  
+/* } */
 
 .gallery-card-footer {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: aquamarine;
+  background-color: #e6a969;
+  color:#060403;
+  
 }
 
 .isFavorite {
@@ -51,3 +55,19 @@
   background-size: 100%;
   align-self: flex-start;
 }
+
+  .button{
+    font:inherit ;
+    font-size:2rem ;
+    background-color: fuchsia;
+    padding: 1rem 4rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor:pointer;
+  }
+  
+  .button:hover{
+    background-color: rgb(246, 93, 246);
+    border-color:rgb(153, 15, 153) ;
+    color:white;
+  }

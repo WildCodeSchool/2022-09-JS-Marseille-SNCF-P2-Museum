@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import CardBody from "./CardBody";
+import GalleryButton from "./GalleryButton";
+import GalleryFooter from "./GalleryFooter"
 
 const Gallery = () => {
   const [paintsItems, setPaintsItems] = useState([
@@ -39,7 +41,7 @@ const Gallery = () => {
       picture: "https://picsum.photos/200/150",
     },
   ]);
-
+  
   return (
     <div className="gallery-body">
       <div className="wrap">
@@ -58,10 +60,13 @@ const Gallery = () => {
         <CardBody picture={paintsItems[0].picture} />
         <CardBody picture={paintsItems[0].picture} />
         <CardBody picture={paintsItems[0].picture} />
-        <CardBody picture={paintsItems[0].picture} />
-      </div>
+       <CardBody picture={paintsItems[0].picture} /> 
+       <GalleryButton/>
+       <GalleryFooter />
+      
     </div>
-  );
+   </div>
+  )
 };
 
 export default Gallery;
