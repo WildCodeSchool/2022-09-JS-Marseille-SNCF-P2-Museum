@@ -23,7 +23,10 @@
    border-right: #7A867D 1px solid;
   width: 25%;
 }
-
+.footerLogo img {
+  width: 60%;
+  padding-top: 10px;
+}
 .footerAbout {
   border-right: #7A867D 1px solid;
   width: 25%;
