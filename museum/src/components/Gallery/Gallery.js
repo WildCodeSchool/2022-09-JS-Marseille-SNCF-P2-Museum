@@ -8,7 +8,7 @@ const Gallery = () => {
     {
       title: "tableau 1",
       isFavorite: "",
-      picture: "https://picsum.photos/198/150",
+      picture: "https://picsum.photos/285/160",
     },
     {
       title: "",
@@ -43,6 +43,7 @@ const Gallery = () => {
   ]);
   
   return (
+    
     <div className="gallery-body">
       <div className="wrap">
         <CardBody picture={paintsItems[0].picture} />
