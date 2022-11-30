@@ -1,5 +1,9 @@
 import React from "react";
 import "./Article.css";
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
+import Stack from "@mui/material/Stack";
 
 function Article() {
   return (
@@ -21,7 +25,10 @@ function Article() {
           since the 1500s, when an unknown printer took.
         </p>
       </header>
-
+      <Stack direction="row" spacing={2}>
+        <Button variant="contained">Next</Button>
+        <Button variant="contained">Favorite</Button>
+      </Stack>
       <div className="content-button">
         <p>
           <span class="material-symbols-outlined">arrow_forward_ios</span>
