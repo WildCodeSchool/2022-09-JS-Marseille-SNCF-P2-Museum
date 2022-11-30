@@ -89,3 +89,13 @@ h2 {
   padding: 0 5px 0 0;
   font-size: 0.8rem;
 }
+
+.MuiAutocomplete-root {
+  background-color: #fff;
+  color: black;
+}
+
+.MuiAutocomplete-hasPopupIcon {
+  background-color: #fff;
+  color: black;
+}
