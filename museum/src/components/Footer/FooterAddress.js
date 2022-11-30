@@ -5,11 +5,10 @@ const FooterAddress = () => {
   return (
     <div className="footerAddress">
       <h3>Coordonnées</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-        labore placeat sapiente ea nemo numquam sit, odio id harum illo tempora,
-        illum ab autem veniam consequuntur est fugit, animi architecto.
-      </p>
+      <p>Museumstraat 1,</p>
+      <p>Amsterdam</p>
+      <h4>Horaires des visites:</h4>
+      <p>Tous les jours de 9h à 17h</p>
     </div>
   );
 };

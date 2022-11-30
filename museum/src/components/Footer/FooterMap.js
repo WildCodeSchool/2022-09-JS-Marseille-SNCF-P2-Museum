@@ -5,10 +5,9 @@ import FooterModalMap from "./FooterModalMap";
 const FooterMap = () => {
   return (
     <div className="footerMap">
-      Google Map
-      <FooterModalMap/>
+      <img src="./plan-google.png" alt="plan gris" />
       <FooterMapButton />
-      
+      <FooterModalMap />
     </div>
   );
 };
