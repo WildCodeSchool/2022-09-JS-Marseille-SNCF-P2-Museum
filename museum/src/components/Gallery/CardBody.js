@@ -11,9 +11,10 @@ const CardBody = (props) => {
 
       <div className="gallery-card-footer">
         <CardTitle />
-        <CardIcon isFavorite={"isFavorite"} />
+        <CardIcon isFavorite={"isFavorite"} />  
       </div>
     </div>
+   
   );
 };
 export default CardBody;
