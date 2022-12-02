@@ -13,7 +13,7 @@ body {
 
 :root {
   --main-bg-color: rgb(255, 255, 255);
-  --wrap: 900px;
+  --wrap: 1024px;
 }
 
 .wrap {
@@ -22,4 +22,3 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
