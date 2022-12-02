@@ -1,11 +1,15 @@
 import React from 'react';
+import Type from './filter/Type';
+import Artist from './filter/Artist';
+import DatingPeriod from './filter/DatingPeriod';
 
 function Filter() {
     return(
         <div className='navFilter'>
-            <div>test navFilter 1</div>
-            <div>test navFilter 2</div>
-            <div>test navFilter 3</div>
+            <div>Filtrer par:</div>
+            <Type/>
+            <Artist/>
+            <DatingPeriod/>
         </div>
     );
 }
