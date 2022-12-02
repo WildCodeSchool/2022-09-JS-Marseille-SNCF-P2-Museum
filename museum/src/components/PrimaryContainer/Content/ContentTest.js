@@ -4,7 +4,6 @@ import Article from "./article/Article";
 import "./Content.css";
 import axios from "axios";
 
-
 //on tire le JSON d'une seule oeuvre artObject
 const uniqueArt = {
   artObject: {

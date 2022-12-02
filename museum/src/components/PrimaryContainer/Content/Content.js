@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FeatureImage from "./FeatureImage/FeatureImage";
 import Article from "./article/Article";
 import axios from "axios";
+import "./Content.css";
 
 //on tire le JSON d'une seule oeuvre artObject
 const uniqueArt = {
