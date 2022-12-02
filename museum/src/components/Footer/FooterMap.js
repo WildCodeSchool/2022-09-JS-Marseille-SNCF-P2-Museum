@@ -1,6 +1,6 @@
 import React from "react";
 import FooterMapButton from "./FooterMapButton";
-import FooterModalMap from "./FooterModalMap";
+
 
 const FooterMap = () => {
   return (
@@ -9,7 +9,6 @@ const FooterMap = () => {
       
       <FooterMapButton />
       
-      <FooterModalMap />
     </div>
   );
 };
