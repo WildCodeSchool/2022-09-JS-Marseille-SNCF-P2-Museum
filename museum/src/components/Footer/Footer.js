@@ -6,6 +6,8 @@ import FooterContent from "./FooterContent";
 import FooterLegacy from "./FooterLegacy";
 
 const Footer = () => {
+
+  
   return (
     <div className="footer">
       <div className="wrap">
