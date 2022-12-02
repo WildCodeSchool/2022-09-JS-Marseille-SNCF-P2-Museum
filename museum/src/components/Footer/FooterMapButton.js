@@ -1,9 +1,14 @@
 import React from "react";
-//import React, { useState } from "react";
+
+import FooterModalMap from "./FooterModalMap"
 
 const FooterMapButton = () => {
-  return(
-      <div className="footerButton"></div>
+
+  return (
+    <div className="footerButton">
+      <FooterModalMap />
+      
+    </div>
   );
 };
 
