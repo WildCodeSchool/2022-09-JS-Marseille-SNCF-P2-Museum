@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import CardBody from "./CardBody";
+import GalleryButton from "./GalleryButton";
+import GalleryFooter from "./GalleryFooter"
 
 const Gallery = () => {
   const [paintsItems, setPaintsItems] = useState([
     {
       title: "tableau 1",
       isFavorite: "",
-      picture: "https://picsum.photos/198/150",
+      picture: "https://picsum.photos/285/160",
     },
     {
       title: "",
@@ -39,8 +41,9 @@ const Gallery = () => {
       picture: "https://picsum.photos/200/150",
     },
   ]);
-
+  
   return (
+    
     <div className="gallery-body">
       <div className="wrap">
         <CardBody picture={paintsItems[0].picture} />
@@ -58,10 +61,13 @@ const Gallery = () => {
         <CardBody picture={paintsItems[0].picture} />
         <CardBody picture={paintsItems[0].picture} />
         <CardBody picture={paintsItems[0].picture} />
-        <CardBody picture={paintsItems[0].picture} />
-      </div>
+       <CardBody picture={paintsItems[0].picture} /> 
+       <GalleryButton/>
+       <GalleryFooter />
+      
     </div>
-  );
+   </div>
+  )
 };
 
 export default Gallery;
