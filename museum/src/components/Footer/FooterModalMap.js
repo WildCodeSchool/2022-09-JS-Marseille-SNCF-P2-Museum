@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
+import "./Footer.css";
 
 
 const style = {
@@ -45,7 +45,9 @@ export default function FooterModalMap() {
         <Fade in={open}>
           <Box sx={style}>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Google map en attente
+              <iframe className="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.838179337392!2d4.883216765149852!3d52.35998321508057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609eeec45f74d%3A0x4786c432dbc81433!2sMuseumstraat%201%2C%201071%20XX%20Amsterdam%2C%20Pays-Bas!5e0!3m2!1sfr!2sfr!4v1670444811882!5m2!1sfr!2sfr"
+              />
             </Typography>
           </Box>
         </Fade>

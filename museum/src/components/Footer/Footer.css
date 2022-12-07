@@ -66,8 +66,8 @@
     margin-block-end: 0em;
     position: relative;
     z-index: 0;
-    bottom: 10rem;
-    left: 2rem;
+    bottom: 11rem;
+    left: 4rem;
 }
 
 .footerButton button:hover {
@@ -76,7 +76,10 @@
   border: 2px #7A867D solid;
 }
 
-
+.map {
+  width: 800px;
+  height: 600px;
+}
 
 
 .footerLegacy {
