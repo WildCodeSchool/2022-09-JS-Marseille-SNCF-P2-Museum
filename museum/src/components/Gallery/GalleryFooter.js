@@ -15,7 +15,7 @@ useEffect(()=>{
 },[])
 const scrollUp=()=>{
 window.scrollTo({
-top:16,
+top:20,
 behavior:"auto",
 })
 } 
@@ -23,11 +23,12 @@ behavior:"auto",
    {backToTop && (
     <button style={{
         position:"fixed",
-        bottom:"50px",
-        right:"50px",
-        height:"50px",
-        width:"50px",
-        fontSize:"50px",
+        bottom:"40px",
+        right:"40px",
+        height:"40px",
+        width:"40px",
+        fontSize:"40px",
+        borderRadius:"10px",
     }}
     onClick={scrollUp}>
     ^</button>
