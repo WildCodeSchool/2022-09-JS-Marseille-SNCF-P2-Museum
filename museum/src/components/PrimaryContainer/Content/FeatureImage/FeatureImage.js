@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const FeatureImage = () => {
-  return <img src="https://picsum.photos/500/300" alt=""></img>;
+const FeatureImage = ({ image }) => {
+  return <img src={image} alt=""></img>;
 };
 
 export default FeatureImage;
