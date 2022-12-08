@@ -59,7 +59,7 @@ function ContentTest() {
         //on tente un truc de boucaque !
         axios
           .get(
-            `https://www.rijksmuseum.nl/api/nl/collection/${winID}?key=DIccpaSN`
+            `https://www.rijksmuseum.nl/api/nl/collection/${winID}?key=DIccpaSN&type=`
           )
           // Extract the DATA from the received response
           .then((response) => response.data)
