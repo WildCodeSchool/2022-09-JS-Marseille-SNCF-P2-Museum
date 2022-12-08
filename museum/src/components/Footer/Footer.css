@@ -77,8 +77,8 @@
 }
 
 .map {
-  width: 800px;
-  height: 600px;
+  width: 50rem;
+  height: 35rem;
 }
 
 
@@ -99,9 +99,3 @@
 
 
 
-/*  color: black;
-  font-size: 1.5rem;
-  position: absolute;
-  top: 50%;
-  padding-top: 80px;
-}*/
