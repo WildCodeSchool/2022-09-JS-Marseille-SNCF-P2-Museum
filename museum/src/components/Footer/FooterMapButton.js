@@ -1,6 +1,6 @@
 import React from "react";
 
-import FooterModalMap from "./FooterModalMap"
+import FooterModalMap from "./FooterModalMap";
 
 const FooterMapButton = () => {
 
