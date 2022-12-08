@@ -1,9 +1,11 @@
 import React from "react";
 
-const CardImage = (props) => {
+const CardImage = ({image}) => {
   return (
-      <img className="gallery-card-image" src={props.picture} alt="tableau"></img>
+      <img className="gallery-card-image" src={image} alt="tableau"></img>
   );
 };
 
 export default CardImage;
+
+ 
