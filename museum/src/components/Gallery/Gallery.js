@@ -3,7 +3,11 @@ import CardBody from "./CardBody";
 import GalleryButton from "./GalleryButton";
 import GalleryFooter from "./GalleryFooter";
 import axios from "axios";
-import ReactPaginate from 'react-paginate';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import Masonry from "@mui/lab/Masonry";
+
 
 const Gallery = () => {
   const [paintsItems, setPaintsItems] = useState([]);
@@ -23,22 +27,26 @@ const Gallery = () => {
     getItems()
   }, []);
  
-  
+ 
   return (
-    
     <div className="gallery-body">
       <div className="wrap">
+        <Masonry columns={3} spacing={2}>
         {paintsItems.map((item, index) =>
           <CardBody 
-          image={item.webImage.url.replace('s0', 'w300')}
-          title={item.title} 
+           image={item.webImage.url.replace('s0', 'w300')}
+
+            title={item.title} 
           />
         )}
+        </Masonry>
+       
+        </div>
+    
         <GalleryButton/>
         <GalleryFooter />
-      
-    </div>
-   </div>
+      </div>
+   
   )
 };
 
