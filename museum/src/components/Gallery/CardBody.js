@@ -7,10 +7,10 @@ import "./Gallery.css";
 const CardBody = (props) => {
   return (
     <div className="gallery-card-body">
-      <CardImage picture={props.picture} />
-
+      <CardImage image={props.image} />
+     
       <div className="gallery-card-footer">
-        <CardTitle />
+        <CardTitle title={props.title}/>
         <CardIcon isFavorite={"isFavorite"} />  
       </div>
     </div>
