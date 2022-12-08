@@ -7,15 +7,16 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
+import UserButton from "./contexts/UserButton";
 
 
 const Gallery = () => {
   const [paintsItems, setPaintsItems] = useState([]);
-
+const [page, setPage]=useState([])
   const getItems = () => {
     axios
       .get(
-        'https://www.rijksmuseum.nl/api/nl/collection?key=DIccpaSN&p=1&ps=9'
+        `https://www.rijksmuseum.nl/api/nl/collection?key=DIccpaSN&p=${1}&ps=9`
       )
       .then((response) => response.data.artObjects)
       .then((data) => {
@@ -42,8 +43,11 @@ const Gallery = () => {
         </Masonry>
        
         </div>
-    
-        <GalleryButton/>
+         <UserButton.Provider value={{ page, setPage }}> 
+        
+        <GalleryButton wapPage={page}wapSetPages={setPage} />
+       </UserButton.Provider> 
+
         <GalleryFooter />
       </div>
    
