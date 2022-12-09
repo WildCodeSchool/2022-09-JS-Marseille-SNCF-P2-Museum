@@ -14,7 +14,7 @@ function Content(props) {
     axios
       //ATTENTION BIENTOT FILTRE
       .get(
-        `https://www.rijksmuseum.nl/api/nl/collection?key=DIccpaSN&p=1&ps=50`
+        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=50`
       )
       // Extract the DATA from the received response
       .then((response) => response.data)
@@ -76,9 +76,7 @@ function Content(props) {
   }, []);
 
   return (
-    <div
-      className="content-container"
-    >
+    <div className="content-container" >
       <div className="wrap">
         <FeatureImage
           image={workOfArt.artObject?.webImage.url.replace("s0", "w500")}

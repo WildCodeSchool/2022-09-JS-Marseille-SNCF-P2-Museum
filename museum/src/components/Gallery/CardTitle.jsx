@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CardTitle = () => {
+const CardTitle = ({title}) => {
     return (
-        <p className="gallery-card-title">Tableau </p>
+        <p className="gallery-card-title">{title}</p>
     );
 };
 

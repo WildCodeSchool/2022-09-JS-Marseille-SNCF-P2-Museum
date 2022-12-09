@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./PrimaryContainer.css";
 import NavBar from "./NavBar/NavBar";
 import Content from "./Content/Content";
+import SearchBar from "./SearchBar";
 
 //on tire le JSON d'une seule oeuvre artObject
 const uniqueArt = {
@@ -47,6 +48,7 @@ function PrimaryContainer() {
     >
       <NavBar />
       <Content workOfArt={workOfArt} setWorkOfArt={setWorkOfArt} />
+      <SearchBar />
     </div>
   );
 }
