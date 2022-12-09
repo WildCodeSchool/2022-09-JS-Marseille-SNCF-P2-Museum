@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .content-container {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 50px 0;
@@ -27,4 +32,5 @@
 .content-container img {
   border-radius: 3px;
   width: 500px;
+  animation: fadeIn 1s;
 }
