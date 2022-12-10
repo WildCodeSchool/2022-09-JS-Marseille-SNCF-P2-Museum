@@ -2,7 +2,7 @@ import React from "react";
 import CardImage from "./CardImage";
 import CardTitle from "./CardTitle";
 import CardIcon from "./CardIcon";
-import "./Gallery.css";
+import "../Gallery.css";
 
 
 const CardBody = (props) => {
