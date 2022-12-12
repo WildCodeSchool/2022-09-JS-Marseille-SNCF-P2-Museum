@@ -16,7 +16,7 @@ const top100Films = [
   { title: "12 Angry Men", year: 1957 },
 ];
 
-const darkTheme = createTheme({
+const darkTheme ={
   palette: {
     background: {
       gray: "gray",
@@ -43,7 +43,7 @@ const darkTheme = createTheme({
     },
     focusVisible: "rgba(66, 153, 225, 0.6)",
   },
-});
+};
 
 
 function SearchBar({}) {
