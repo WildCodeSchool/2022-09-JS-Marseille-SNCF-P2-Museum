@@ -5,10 +5,10 @@ import axios from "axios";
 import "./Content.css";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-
+import SearchBar from "./SearchBar/SearchBar";
 
 function Content(props) {
-  const {workOfArt, setWorkOfArt} = props;
+  const { workOfArt, setWorkOfArt } = props;
 
   const getTinderArt = () => {
     axios
@@ -30,7 +30,6 @@ function Content(props) {
         //console.log("ID aléatoire", data.artObjects[randomNbr].objectNumber);
         let winID = data.artObjects[randomNbr].objectNumber;
 
-        //on tente un truc de boucaque ! on dirait que ça rame a mort
         axios
           .get(
             `https://www.rijksmuseum.nl/api/en/collection/${winID}?key=DIccpaSN&type=painting`
@@ -40,33 +39,16 @@ function Content(props) {
 
           // Use this data to update the state
           .then((data) => {
-            //console.log("data d'une oeuvre unique : ", data);
-            //console.log("URL d'une oeuvre unique", data.artObject.webImage.url);
-            //console.log("Title d'une oeuvre unique : ", data.artObject.title);
-            /*console.log(
-              workOfArt.artObject?.webImage.url.replace("s0", "w1200")
-            );*/
-            //document.body.style.backgroundImage = "url('https://www.alain-bensoussan.com/wp-content/uploads/2017/05/34233891.jpg'))";
-            //const machin = `"url('${workOfArt.artObject?.webImage.url.replace('s0', 'w1200')}')"`;
-
-            /*console.log(
-              "Le truc chelou : ",
-              `"url('${workOfArt.artObject?.webImage.url.replace(
-                "s0",
-                "w1200"
-              )}')"`
-            );*/
-
             setWorkOfArt(data);
 
-            const machin = (document.getElementsByClassName(
+            const bg = (document.getElementsByClassName(
               "PrimaryContainer"
             )[0].style.backgroundImage = `"url('${workOfArt.artObject?.webImage.url.replace(
               "s0",
               "w1200"
             )}')"`);
 
-            console.log("machin : ", machin);
+            console.log("machin : ", bg);
           });
       });
   };
@@ -76,26 +58,29 @@ function Content(props) {
   }, []);
 
   return (
-    <div className="content-container" >
-      <div className="wrap">
-        <FeatureImage
-          image={workOfArt.artObject?.webImage.url.replace("s0", "w500")}
-        />
-        <div className="content-article-container">
-          <Article
-            title={workOfArt.artObject?.title}
-            artist={workOfArt.artObject?.label.makerLine}
-            description={workOfArt.artObject?.label.description}
+    <>
+      <div className="content-container">
+        <div className="wrap">
+          <FeatureImage
+            image={workOfArt.artObject?.webImage.url.replace("s0", "w500")}
           />
-          <Stack direction="row" spacing={2}>
-            <Button variant="contained" onClick={getTinderArt}>
-              Next
-            </Button>
-            <Button variant="contained">Favorite</Button>
-          </Stack>
+          <div className="content-article-container">
+            <Article
+              title={workOfArt.artObject?.title}
+              artist={workOfArt.artObject?.label.makerLine}
+              description={workOfArt.artObject?.label.description}
+            />
+            <Stack direction="row" spacing={2}>
+              <Button variant="contained" onClick={getTinderArt}>
+                Next
+              </Button>
+              <Button variant="contained">Favorite</Button>
+            </Stack>
+          </div>
         </div>
       </div>
-    </div>
+      <SearchBar />
+    </>
   );
 }
 

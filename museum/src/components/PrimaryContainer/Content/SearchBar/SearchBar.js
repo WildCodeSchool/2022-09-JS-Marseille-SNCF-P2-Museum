@@ -1,9 +1,8 @@
 import React from "react";
-import Filter from "./NavBar/Filter";
+//import Filter from "../../NavBar/Filter";
 import "./SearchBar.css";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
@@ -14,11 +13,11 @@ const top100Films = [
   { title: "12 Angry Men", year: 1957 },
 ];
 
-
-function SearchBar({}) {
+function SearchBar(props) {
+  const { workOfArt, setWorkOfArt } = props;
   return (
     <div className="searchbar">
-      <div className="wrap" >
+      <div className="wrap">
         <Autocomplete
           variant="outlined"
           sx={{
@@ -31,7 +30,7 @@ function SearchBar({}) {
           size="small"
           options={top100Films}
           getOptionLabel={(option) => option.title}
-          defaultValue={top100Films[13]}
+          defaultValue={top100Films[3]}
           renderInput={(params) => (
             <TextField {...params} label="Size small" placeholder="Favorites" />
           )}

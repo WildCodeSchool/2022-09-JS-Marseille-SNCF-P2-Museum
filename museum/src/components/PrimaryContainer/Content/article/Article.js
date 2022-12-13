@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Article.css";
 
-
 function Article({ title, artist, description }) {
   return (
     <>
