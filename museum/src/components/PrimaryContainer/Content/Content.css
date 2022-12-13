@@ -31,6 +31,5 @@
 
 .content-container img {
   border-radius: 3px;
-  width: 50%;
   animation: fadeIn 1s;
 }
