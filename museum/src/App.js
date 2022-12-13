@@ -1,7 +1,7 @@
-import './App.css';
-import PrimaryContainer from './components/PrimaryContainer/PrimaryContainer';
-import Gallery from './components/Gallery/Gallery';
-import Footer from './components/Footer/Footer';
+import "./App.css";
+import PrimaryContainer from "./components/PrimaryContainer/PrimaryContainer";
+import Gallery from "./components/Gallery/Gallery";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (

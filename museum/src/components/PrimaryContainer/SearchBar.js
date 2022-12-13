@@ -3,8 +3,6 @@ import Filter from "./NavBar/Filter";
 import "./SearchBar.css";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
-
 
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
@@ -16,42 +14,12 @@ const top100Films = [
   { title: "12 Angry Men", year: 1957 },
 ];
 
-const darkTheme = createTheme({
-  palette: {
-    background: {
-      gray: "gray",
-      black: "#000000",
-      transparent: "rgba(255, 255, 255, 0)",
-    },
-    border: {
-      white: "#FDFDFB",
-      black: "#000000",
-    },
-    text: {
-      primary: "#173A5E",
-      secondary: "#46505A",
-    },
-    primary: {
-      solidBg: "#FFF",
-      solidHoverBg: "#2C7A7B",
-      solidActiveBg: "#285E61",
-      outlinedColor: "#2C7A7B",
-      outlinedBorder: "#FFF",
-      outlinedHoverBorder: undefined,
-      outlinedHoverBg: "#FFF",
-      outlinedActiveBg: "#B2F5EA",
-    },
-    focusVisible: "rgba(66, 153, 225, 0.6)",
-  },
-});
-
 
 function SearchBar({}) {
   return (
     <div className="searchbar">
-      <div className="wrap" theme={darkTheme}>
+      <div className="wrap" >
         <Autocomplete
-          theme={darkTheme}
           variant="outlined"
           sx={{
             width: "30%",
