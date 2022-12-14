@@ -1,6 +1,10 @@
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .content-container {
@@ -12,7 +16,6 @@
   align-items: flex-start;
   gap: 30px;
   width: 100%;
-  -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -o-filter: blur(0px);
   -ms-filter: blur(0px);
@@ -31,6 +34,5 @@
 
 .content-container img {
   border-radius: 3px;
-  width: 50%;
   animation: fadeIn 1s;
 }

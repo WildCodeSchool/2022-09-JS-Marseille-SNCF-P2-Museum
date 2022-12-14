@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./PrimaryContainer.css";
 import NavBar from "./NavBar/NavBar";
 import Content from "./Content/Content";
-import SearchBar from "./SearchBar";
 
 //on tire le JSON d'une seule oeuvre artObject
 const uniqueArt = {
@@ -29,6 +28,9 @@ const uniqueArt = {
         "Rembrandts beroemdste en grootste schilderij werd gemaakt voor de Kloveniersdoelen. Dit was een van de drie hoofdkwartieren van de Amsterdamse schutterij, de burgerwacht van de stad. Rembrandt was de eerste die op een schuttersstuk alle figuren in actie weergaf. De kapitein, in het zwart, geeft zijn luitenant opdracht dat de compagnie moet gaan marcheren. De schutters stellen zich op. Met behulp van licht vestigde Rembrandt de aandacht op belangrijke details, zoals het handgebaar van de kapitein en het kleine meisje op de voorgrond. Zij is de mascotte van de schutters. De naam Nachtwacht is pas veel later ontstaan, toen men dacht dat het om een nachtelijk tafereel ging.",
       notes: "Multimediatour, 500. Tekst aangeleverd door Jonathan Bikker.",
       date: "2019-07-05",
+      colors: {
+        hex: "#eeeeee",
+      },
     },
   },
 };
@@ -48,7 +50,6 @@ function PrimaryContainer() {
     >
       <NavBar />
       <Content workOfArt={workOfArt} setWorkOfArt={setWorkOfArt} />
-      <SearchBar />
     </div>
   );
 }

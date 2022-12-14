@@ -1,5 +1,10 @@
 import * as React from "react";
+import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
+import ListItemText from "@mui/material/ListItemText";
+import ListItem from "@mui/material/ListItem";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -17,7 +22,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const FeatureImage = ({ image, imagePopup, title }) => {
+export default function FullScreenDialog({ image, title }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -27,14 +32,12 @@ const FeatureImage = ({ image, imagePopup, title }) => {
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <div>
-      <img
-        src={image}
-        alt=""
-        style={{ animation: `fadeIn 1s` }}
-        onClick={handleClickOpen}
-      ></img>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Coucou les filles !!!
+      </Button>
       <Dialog
         fullScreen
         open={open}
@@ -56,10 +59,8 @@ const FeatureImage = ({ image, imagePopup, title }) => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <img src={imagePopup} alt="" style={{ animation: `fadeIn 1s` }}></img>
+        <img src={image} alt="" style={{ animation: `fadeIn 1s` }}></img>
       </Dialog>
     </div>
   );
-};
-
-export default FeatureImage;
+}
