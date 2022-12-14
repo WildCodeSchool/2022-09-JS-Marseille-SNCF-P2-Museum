@@ -4,9 +4,11 @@ const FooterLegacy = () => {
 
   return (
     <div className="footerLegacy">
-      <h3>Mentions Legales</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <p>Perspiciatis labore placeat sapiente ea nemo numquam sit, odio</p>
+      <img src="./R.png" alt="" />
+      <p>En partenariat avec Musée de France</p>
+      <p>Mentions Legales</p>
+      <p>Données Personnelles</p>
+      <p>Crédits Photographiques</p>
     </div>
   );
 };

@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .content-container {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 50px 0;
@@ -6,9 +15,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
-  height: 300px;
   width: 100%;
-  -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -o-filter: blur(0px);
   -ms-filter: blur(0px);
@@ -20,11 +27,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 2%;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
 .content-container img {
   border-radius: 3px;
+  animation: fadeIn 1s;
 }

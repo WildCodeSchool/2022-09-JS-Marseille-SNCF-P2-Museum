@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 
 const CardIcon = (props) => {
  
-        const [isFavorite, setIsFavorite] = React.useState(props.isFavorite)
+      const [isFavorite, setIsFavorite] = useState(props.isFavorite)
       
-       function handleClickFavorite() {
+      function handleClickFavorite() {
         console.log('click');
          setIsFavorite(!isFavorite);
          console.log(isFavorite);
@@ -21,4 +21,4 @@ const CardIcon = (props) => {
     );
 };
 
-export default CardIcon;
+export default CardIcon ;

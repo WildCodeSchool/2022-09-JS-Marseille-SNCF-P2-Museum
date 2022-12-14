@@ -1,7 +1,11 @@
-import React from "react";
+import * as React from "react";
 
-const FeatureImage = () => {
-  return <img src="https://picsum.photos/500/300" alt=""></img>;
+const FeatureImage = ({ image }) => {
+  return (
+    <div>
+      <img src={image} alt="" style={{ animation: `fadeIn 1s` }}></img>
+    </div>
+  );
 };
 
 export default FeatureImage;
