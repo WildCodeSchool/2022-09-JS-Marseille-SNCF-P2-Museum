@@ -16,7 +16,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 800,
   height: 600,
-  borderRadius: 5,
+  borderRadius: 2,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -30,7 +30,7 @@ export default function FooterModalMap() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen}>NOUS TROUVER</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

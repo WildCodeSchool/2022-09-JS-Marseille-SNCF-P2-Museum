@@ -7,7 +7,6 @@ const FooterMapButton = () => {
   return (
     <div className="footerButton">
       <FooterModalMap />
-      
     </div>
   );
 };
