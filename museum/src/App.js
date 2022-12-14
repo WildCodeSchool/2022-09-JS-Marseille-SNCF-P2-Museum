@@ -4,7 +4,20 @@ import PrimaryContainer from './components/PrimaryContainer/PrimaryContainer';
 import Gallery from './components/Gallery/Gallery';
 import Footer from './components/Footer/Footer';
 import ListContext from "./contexts/ListContext";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#AE8E5F",
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#E8DBCB",
+      contrastText: "#000",
+    },
+  },
+});
 
 function App() {
   const [type, setType] = useState("");
@@ -14,11 +27,13 @@ function App() {
   return (
     <div className="App">
       <ListContext.Provider value={{type:type, setType:setType, datingPeriod:datingPeriod, setDatingPeriod:setDatingPeriod, artist:artist, setArtist:setArtist}}>
+      <ThemeProvider theme={theme}>
         <PrimaryContainer />
-        <Gallery/>
+        <Gallery />
+      </ThemeProvider>
       </ListContext.Provider>
-        <Footer />
-    </div>      
+      <Footer />
+    </div>
   );
 }
 
