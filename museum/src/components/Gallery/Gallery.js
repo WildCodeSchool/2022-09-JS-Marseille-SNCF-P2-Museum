@@ -8,18 +8,23 @@ import ListContext from "../../contexts/ListContext";
 import "./Gallery.css";
 
 const Gallery = () => {
+  //paintsItems permet de remplir la gallerie avec des oeuvres
   const [paintsItems, setPaintsItems] = useState([]);
+  //page permet de changer les oeuvres affichées en fonction de la page
   const [page, setPage] = useState(1);
+  //type, datingPeriod et artist sont importés depuis le contexte pour filtrer les oeuvres
   const {type, setType} = useContext(ListContext);
   const {datingPeriod, setDatingPeriod} = useContext(ListContext);
   const {artist, setArtist} = useContext(ListContext);
 
-  console.log("artist",artist.label)
-  console.log("periode:",datingPeriod.id);
-  console.log("type:",type.label)
+  console.log("artist",artist?.label)
+  console.log("periode:",datingPeriod?.id);
+  console.log("type:",type?.label)
 
+  //getItems fait la requete API
   const getItems = () => {
-    console.log("get item", type.label)
+    console.log("get item", type?.label)
+    //si le type est null, fait la requête sans utiliser le type
     if (type?.label == null){
       console.log("test if")
       axios
@@ -30,6 +35,7 @@ const Gallery = () => {
         setPaintsItems(artObjects);
       });
     }else{
+      //si type a un contenu, fait la requête API en utilisant la variable type?.label
       console.log(type?.label, "else")
     axios
       .get(
@@ -40,11 +46,11 @@ const Gallery = () => {
       });}
   };
 
-  //au changement de type.label (depuis artist.js) relance la requete à l'API
+  //au changement de page et/ou type.label et/ou artist?.label et/ou datingPeriod?.id, relance la requete à l'API (via getItems)
   useEffect(() => {
     getItems();
     console.log(page, "gallery");
-  }, [page]);
+  }, [page, type?.label, artist?.label, datingPeriod?.id]);
  
   
   return (

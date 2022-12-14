@@ -62,10 +62,6 @@ function TypeFilter() {
   const {type, setType} = useContext(ListContext);
   const [inputType, setInputType] = useState('');
   console.log(setType, "setType");
-  /*useEffect (() => {
-    setType(type);
-    console.log(type, "type");
-  }, [type, setType]);*/
   
     return (
       <Autocomplete
@@ -77,9 +73,6 @@ function TypeFilter() {
           inputValue={inputType}
           onInputChange={(event, newInputValue) => {
             setInputType(newInputValue);
-          }}
-          onDelete={() => {
-            setType(type);
           }}
           id="type"
           options={typesList}

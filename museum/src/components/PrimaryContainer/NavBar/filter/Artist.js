@@ -118,9 +118,6 @@ function Artist() {
           onInputChange={(event, newInputValue) => {
             setInputArtist(newInputValue);
           }}
-          onDelete={() => {
-            setArtist(artist);
-          }}
           id="artist"
           options={artistList}
           variant="outlined"
