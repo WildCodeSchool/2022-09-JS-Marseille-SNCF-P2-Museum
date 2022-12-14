@@ -17,7 +17,7 @@ const CardImage = ({ image }) => {
 
   const style = {
     position: "absolute",
-    width: 1300,
+    width: 1300 ,
     height: 700,
     top: "50%",
     left: "50%",

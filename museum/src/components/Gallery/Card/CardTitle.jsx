@@ -6,4 +6,4 @@ const CardTitle = ({title}) => {
     );
 };
 
-export default CardTitle;
+export default CardTitle ;
