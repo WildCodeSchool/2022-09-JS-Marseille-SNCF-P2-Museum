@@ -35,4 +35,10 @@
 .content-container img {
   border-radius: 3px;
   animation: fadeIn 1s;
+  cursor: zoom-in;
+  transition: transform .5s; /* Animation */
+}
+
+.content-container img:hover {
+ transform: scale(1.01); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
