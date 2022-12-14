@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const CardIcon = (props) => {
  
-      const [isFavorite, setIsFavorite] = React.useState(props.isFavorite)
+      const [isFavorite, setIsFavorite] = useState(props.isFavorite)
       
       function handleClickFavorite() {
         console.log('click');
