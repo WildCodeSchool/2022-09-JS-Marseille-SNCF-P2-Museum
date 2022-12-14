@@ -79,8 +79,9 @@ const Transition = forwardRef(function Transition(props, ref) {
   );
 }
 
-export default CardImage;
+export default CardImage ;
  
   
+
 
   
