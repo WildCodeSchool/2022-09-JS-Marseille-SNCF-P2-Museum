@@ -4,6 +4,7 @@ import GalleryButton from "./ButtonGallery/GalleryButton";
 import GalleryFooter from "./Galleryscroll";
 import axios from "axios";
 import Masonry from "@mui/lab/Masonry";
+
 import "./Gallery.css";
 
 const Gallery = () => {
@@ -21,6 +22,7 @@ const Gallery = () => {
       .then((data) => {
         setPaintsItems(data);
       });
+      
   };
 
   useEffect(() => {
@@ -29,9 +31,9 @@ const Gallery = () => {
   }, [page]);
 
   return (
-    <div className="gallery-body">
+    <div className="gallery-body" id= "startGallery">
       <div className="wrap">
-        <Masonry columns={3} spacing={1}>
+        <Masonry columns={3} spacing={8}>
           {paintsItems.map((item, index) => (
             <CardBody
               image={item?.webImage.url.replace("s0", "w300")}
@@ -39,6 +41,7 @@ const Gallery = () => {
             />
           ))}
         </Masonry>
+       
         <GalleryButton page={page} setPage={setPage} />
       </div>
 

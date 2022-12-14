@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react';
+
 import Pagination from "@mui/material/Pagination";
 
 function GalleryButton(props) {
@@ -9,20 +9,20 @@ function GalleryButton(props) {
 
      const handleChangePage=(event,page) => {
      setPage(page);
-    
-     
+     const startGallery=document.getElementById("startGallery")
+   // window.scrollTo(0,0);
+     startGallery.scrollIntoView();
        console.log({page},"button");
    }
   
-  /* useEffect (( )=> {
-     getItems()
-    }, [setPage]);*/
+ 
 
+ 
    return (
       <div className="GalleryButton"> 
          <Pagination count={10}color="primary" 
             value={page} 
-             onChange={handleChangePage}
+             onChange={handleChangePage} 
       
             >
          </Pagination>
