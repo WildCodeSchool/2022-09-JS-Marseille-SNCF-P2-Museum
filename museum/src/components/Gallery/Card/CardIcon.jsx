@@ -21,4 +21,4 @@ const CardIcon = (props) => {
     );
 };
 
-export default CardIcon;
+export default CardIcon ;
