@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const GalleryFooter = () => {
 const [backToTop, setBackToTop]=useState(false);
+
 useEffect(()=>{
     window.addEventListener("scroll", ()=>{
         if (window.scrollY>100){
@@ -28,7 +29,8 @@ behavior:"auto",
         height:"40px",
         width:"40px",
         fontSize:"40px",
-        borderRadius:"10px",
+        borderRadius:"20px",
+       
     }}
     onClick={scrollUp}>
     ^</button>

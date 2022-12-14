@@ -1,3 +1,4 @@
+
 .gallery-body {
   padding-top: 30px;
   display: flex;
@@ -35,6 +36,7 @@
 
 img.gallery-card-image{
   width: 100%;
+  
 }
 
 .gallery-card-footer {
@@ -47,11 +49,11 @@ img.gallery-card-image{
 }
 
 p.gallery-card-title{
+  margin: 0 0 16px;
   font-size: 1rem;
 }
 
 .isFavorite {
-  padding:0;
   width: 20px;
   height: 20px;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
@@ -62,6 +64,7 @@ p.gallery-card-title{
   width: 20px;
   height: 20px;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
+ 
 }
 
 
@@ -83,3 +86,9 @@ p.gallery-card-title{
     /* color:black; */
     /* border-radius: 10px; */
   /* } */
+.GalleryButton{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
