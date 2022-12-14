@@ -11,29 +11,26 @@ const Gallery = () => {
   const [paintsItems, setPaintsItems] = useState([]);
   const [page, setPage] = useState(1);
 
- 
   const getItems = () => {
     axios
       .get(
-        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=${
-          page }&ps=9`
+        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=${page}&ps=9`
       )
       .then((response) => response.data.artObjects)
       .then((data) => {
         setPaintsItems(data);
       });
-      
   };
 
   useEffect(() => {
     getItems();
-     console.log(page, "gallery");
+    console.log(page, "gallery");
   }, [page]);
 
   return (
-    <div className="gallery-body" id= "startGallery">
+    <div className="gallery-body" id="startGallery">
       <div className="wrap">
-        <Masonry columns={3} spacing={8}>
+        <Masonry columns={3} spacing={4}>
           {paintsItems.map((item, index) => (
             <CardBody
               image={item?.webImage.url.replace("s0", "w300")}
@@ -41,7 +38,7 @@ const Gallery = () => {
             />
           ))}
         </Masonry>
-       
+
         <GalleryButton page={page} setPage={setPage} />
       </div>
 
@@ -50,5 +47,4 @@ const Gallery = () => {
   );
 };
 
-
-export default Gallery ;
+export default Gallery;
