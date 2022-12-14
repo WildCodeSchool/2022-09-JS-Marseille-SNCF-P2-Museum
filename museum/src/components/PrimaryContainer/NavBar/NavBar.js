@@ -10,7 +10,6 @@ function NavBar() {
     <div className="NavBar">
       <div className="wrap">
         <Logo/>
-        <Filter/>
         <NavButton />
       </div>
     </div>

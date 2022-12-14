@@ -24,7 +24,7 @@ const Gallery = () => {
       console.log("test if")
       axios
       .get(
-        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=9`
+        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=${page}&ps=9`
       )
       .then(({ data: { artObjects } }) => {
         setPaintsItems(artObjects);
@@ -41,9 +41,6 @@ const Gallery = () => {
   };
 
   //au changement de type.label (depuis artist.js) relance la requete à l'API
-  useEffect (() => {
-    getItems()
-  }, [type?.label]);
   useEffect(() => {
     getItems();
     console.log(page, "gallery");

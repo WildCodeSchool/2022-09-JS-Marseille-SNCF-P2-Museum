@@ -7,7 +7,6 @@ function Filter() {
     
     return(
         <div className='navFilter'>
-            <div>Filtrer par:</div>
             <TypeFilter/>
             <Artist/>
             <DatingPeriod/>
