@@ -5,11 +5,12 @@ import NavButton from "./NavButton";
 import Logo from "./Logo";
 
 function NavBar() {
+  
   return (
     <div className="NavBar">
       <div className="wrap">
         <Logo/>
-        <Filter />
+        <Filter/>
         <NavButton />
       </div>
     </div>
