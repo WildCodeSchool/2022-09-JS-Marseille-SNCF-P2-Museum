@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
+import Tooltip from "@mui/material/Tooltip";
+import { Image } from "mui-image";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -17,7 +19,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const FeatureImage = ({ image, imagePopup, title }) => {
+const FeatureImage = ({ image, imagePopup, title, artist }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -29,12 +31,14 @@ const FeatureImage = ({ image, imagePopup, title }) => {
   };
   return (
     <div>
-      <img
-        src={image}
-        alt=""
-        style={{ animation: `fadeIn 1s` }}
-        onClick={handleClickOpen}
-      ></img>
+      <Tooltip describeChild title="Agrandir l'oeuvre" arrow>
+        <Image
+          src={image}
+          alt={title}
+          duration={325}
+          onClick={handleClickOpen}
+        />
+      </Tooltip>
       <Dialog
         fullScreen
         open={open}
@@ -52,11 +56,17 @@ const FeatureImage = ({ image, imagePopup, title }) => {
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              {title}
+              <b>{title}</b> - <i>{artist}</i>
             </Typography>
           </Toolbar>
         </AppBar>
-        <img src={imagePopup} alt="" style={{ animation: `fadeIn 1s` }}></img>
+        <Image
+          src={imagePopup}
+          alt={title}
+          bgColor="#000000"
+          showLoading
+          height={4000}
+        />
       </Dialog>
     </div>
   );
