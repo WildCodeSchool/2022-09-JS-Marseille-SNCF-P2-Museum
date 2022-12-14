@@ -15,6 +15,14 @@ const theme = createTheme({
       contrastText: "#000",
     },
   },
+  typography: {
+    subtitle1: {
+      fontSize: 12,
+    },
+    body1: {
+      fontWeight: 500,
+    },
+  },
 });
 
 function App() {
