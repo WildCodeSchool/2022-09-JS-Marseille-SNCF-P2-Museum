@@ -6,6 +6,7 @@ import "./Content.css";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchBar from "./SearchBar/SearchBar";
+import FullScreenDialog from "./FeatureImage/dialogMuiTest";
 
 function Content(props) {
   const { workOfArt, setWorkOfArt } = props;
@@ -72,6 +73,7 @@ function Content(props) {
               artist={workOfArt.artObject?.label.makerLine}
               description={workOfArt.artObject?.label.description}
             />
+            <FullScreenDialog />
             <Stack direction="row" spacing={2}>
               <Button variant="contained" onClick={getTinderArt}>
                 Next
