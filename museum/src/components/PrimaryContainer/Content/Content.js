@@ -6,6 +6,7 @@ import "./Content.css";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchBar from "./SearchBar/SearchBar";
+import FullScreenDialog from "./FeatureImage/dialogMuiTest";
 
 function Content(props) {
   const { workOfArt, setWorkOfArt } = props;
@@ -65,6 +66,8 @@ function Content(props) {
         <div className="wrap">
           <FeatureImage
             image={workOfArt.artObject?.webImage.url.replace("s0", "w500")}
+            imagePopup={workOfArt.artObject?.webImage.url.replace("s0", "w2000")}
+            title={workOfArt.artObject?.title}
           />
           <div className="content-article-container">
             <Article
@@ -81,9 +84,7 @@ function Content(props) {
           </div>
         </div>
       </div>
-      <SearchBar
-        BGcolor={"#FFF"}
-      />
+      <SearchBar BGcolor={"#FFF"} />
     </>
   );
 }
