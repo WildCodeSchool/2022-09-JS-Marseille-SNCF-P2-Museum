@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 
 const CardIcon = (props) => {
@@ -15,6 +16,7 @@ const CardIcon = (props) => {
        
          <div id="icon-gallery"className={isFavorite ? 'isFavorite' : 'notFavorite'}
           onClick={handleClickFavorite}>
+            <FavoriteIcon  size='small'/>
           </div>
               
         

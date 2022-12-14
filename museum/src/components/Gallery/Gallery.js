@@ -7,6 +7,7 @@ import Masonry from "@mui/lab/Masonry";
 
 import "./Gallery.css";
 
+
 const Gallery = () => {
   const [paintsItems, setPaintsItems] = useState([]);
   const [page, setPage] = useState(1);
@@ -33,9 +34,11 @@ const Gallery = () => {
         <Masonry columns={3} spacing={4}>
           {paintsItems.map((item, index) => (
             <CardBody
-              image={item?.webImage.url.replace("s0", "w300")}
+              image={item?.webImage.url.replace("s0", "w310")}
+              imagePopup={item?.webImage.url.replace("s0", "w3000")}
               title={item.title}
             />
+            
           ))}
         </Masonry>
 
