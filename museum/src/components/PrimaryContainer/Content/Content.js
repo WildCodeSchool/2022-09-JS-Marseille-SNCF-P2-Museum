@@ -6,7 +6,7 @@ import "./Content.css";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchBar from "./SearchBar/SearchBar";
-import FullScreenDialog from "./FeatureImage/dialogMuiTest";
+import theme from "../../../App";
 
 function Content(props) {
   const { workOfArt, setWorkOfArt } = props;
@@ -15,7 +15,7 @@ function Content(props) {
     axios
       //ATTENTION BIENTOT FILTRE
       .get(
-        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=50`
+        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=50&type=painting`
       )
       // Extract the DATA from the received response
       .then((response) => response.data)
@@ -33,7 +33,7 @@ function Content(props) {
 
         axios
           .get(
-            `https://www.rijksmuseum.nl/api/en/collection/${winID}?key=DIccpaSN&type=painting`
+            `https://www.rijksmuseum.nl/api/en/collection/${winID}?key=DIccpaSN`
           )
           // Extract the DATA from the received response
           .then((response) => response.data)
@@ -66,14 +66,19 @@ function Content(props) {
         <div className="wrap">
           <FeatureImage
             image={workOfArt.artObject?.webImage.url.replace("s0", "w500")}
-            imagePopup={workOfArt.artObject?.webImage.url.replace("s0", "w2000")}
+            imagePopup={workOfArt.artObject?.webImage.url.replace(
+              "s0",
+              "w2000"
+            )}
             title={workOfArt.artObject?.title}
+            artist={workOfArt.artObject?.label.makerLine}
           />
           <div className="content-article-container">
             <Article
               title={workOfArt.artObject?.title}
               artist={workOfArt.artObject?.label.makerLine}
               description={workOfArt.artObject?.label.description}
+              objectCollection={workOfArt.artObject?.objectCollection}
             />
             <Stack direction="row" spacing={2}>
               <Button variant="contained" onClick={getTinderArt}>
@@ -84,7 +89,7 @@ function Content(props) {
           </div>
         </div>
       </div>
-      <SearchBar BGcolor={"#FFF"} />
+      <SearchBar />
     </>
   );
 }
