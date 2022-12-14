@@ -7,8 +7,8 @@ import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
+import { Image } from "mui-image";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -32,13 +32,12 @@ const FeatureImage = ({ image, imagePopup, title, artist }) => {
   return (
     <div>
       <Tooltip describeChild title="Agrandir l'oeuvre" arrow>
-        <img
+        <Image
           src={image}
-          alt=""
-          style={{ animation: `fadeIn 1s` }}
+          alt={title}
+          duration={325}
           onClick={handleClickOpen}
-          elevation={24}
-        ></img>
+        />
       </Tooltip>
       <Dialog
         fullScreen
@@ -61,7 +60,13 @@ const FeatureImage = ({ image, imagePopup, title, artist }) => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <img src={imagePopup} alt="" style={{ animation: `fadeIn 1s` }}></img>
+        <Image
+          src={imagePopup}
+          alt={title}
+          bgColor="#000000"
+          showLoading
+          height={4000}
+        />
       </Dialog>
     </div>
   );
