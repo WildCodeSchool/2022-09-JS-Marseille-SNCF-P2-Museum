@@ -66,6 +66,8 @@ function Content(props) {
         <div className="wrap">
           <FeatureImage
             image={workOfArt.artObject?.webImage.url.replace("s0", "w500")}
+            imagePopup={workOfArt.artObject?.webImage.url.replace("s0", "w2000")}
+            title={workOfArt.artObject?.title}
           />
           <div className="content-article-container">
             <Article
@@ -73,7 +75,6 @@ function Content(props) {
               artist={workOfArt.artObject?.label.makerLine}
               description={workOfArt.artObject?.label.description}
             />
-            <FullScreenDialog />
             <Stack direction="row" spacing={2}>
               <Button variant="contained" onClick={getTinderArt}>
                 Next
@@ -83,9 +84,7 @@ function Content(props) {
           </div>
         </div>
       </div>
-      <SearchBar
-        BGcolor={"#FFF"}
-      />
+      <SearchBar BGcolor={"#FFF"} />
     </>
   );
 }
