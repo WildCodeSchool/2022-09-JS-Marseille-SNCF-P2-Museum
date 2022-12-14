@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Article.css";
 
 function Article({ title, artist, description }) {

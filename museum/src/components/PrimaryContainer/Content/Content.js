@@ -48,7 +48,7 @@ function Content(props) {
               "w1200"
             )}')"`);
 
-            console.log("machin : ", bg);
+            console.log("machin : ", data);
           });
       });
   };
@@ -56,6 +56,8 @@ function Content(props) {
   useEffect(() => {
     getTinderArt();
   }, []);
+
+  console.log("hex[0] : ", workOfArt.artObject?.colorsWithNormalization[0].normalizedHex);
 
   return (
     <>
@@ -79,9 +81,14 @@ function Content(props) {
           </div>
         </div>
       </div>
-      <SearchBar />
+      <SearchBar
+        BGcolor={workOfArt.artObject?.colorsWithNormalization[0].normalizedHex}
+      />
     </>
   );
 }
 
 export default Content;
+// <SearchBar />
+// BGcolor={workOfArt.artObject?.colors[0].hex}
+//workOfArt.artObject?.colors.hex
