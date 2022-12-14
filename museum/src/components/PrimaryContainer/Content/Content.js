@@ -57,7 +57,7 @@ function Content(props) {
     getTinderArt();
   }, []);
 
-  console.log("hex[0] : ", workOfArt.artObject?.colorsWithNormalization[0].normalizedHex);
+  //console.log("hex[0] : ", workOfArt.artObject?.colorsWithNormalization[0].normalizedHex);
 
   return (
     <>
@@ -82,7 +82,7 @@ function Content(props) {
         </div>
       </div>
       <SearchBar
-        BGcolor={workOfArt.artObject?.colorsWithNormalization[0].normalizedHex}
+        BGcolor={"#FFF"}
       />
     </>
   );

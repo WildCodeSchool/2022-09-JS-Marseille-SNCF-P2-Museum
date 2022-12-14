@@ -6,10 +6,6 @@ import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
-import { width } from "@mui/system";
-
 const CardImage = ({ image }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
