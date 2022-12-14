@@ -15,8 +15,10 @@ const CardBody = (props) => {
       />
 
       <div className="gallery-card-footer">
-        <CardTitle title={props.title} />
-        <CardIcon isFavorite={"isFavorite"} />
+        <CardTitle title={props.title}
+        artist={props.artist} />
+
+        <CardIcon selected={"setSelected"} />
       </div>
     </div>
   );

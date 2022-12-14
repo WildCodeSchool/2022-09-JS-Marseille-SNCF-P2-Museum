@@ -1,8 +1,16 @@
 import React from 'react';
-
-const CardTitle = ({title}) => {
+import {ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import theme from "../../../App";
+import Box from "@mui/material/Box";
+const CardTitle = ({title, artist}) => {
     return (
-        <p className="gallery-card-title">{title}</p>
+   
+      <Box>
+        <Typography>{title}</Typography>
+        <Typography variant="subtitle1">{artist}</Typography>
+      </Box>
+  
     );
 };
 

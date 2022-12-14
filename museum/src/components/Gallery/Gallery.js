@@ -19,6 +19,7 @@ const Gallery = () => {
       )
       .then((response) => response.data.artObjects)
       .then((data) => {
+        console.log("data :", data)
         setPaintsItems(data);
       });
   };
@@ -37,8 +38,8 @@ const Gallery = () => {
               image={item?.webImage.url.replace("s0", "w310")}
               imagePopup={item?.webImage.url.replace("s0", "w3000")}
               title={item.title}
+              artist={item.principalOrFirstMaker}
             />
-            
           ))}
         </Masonry>
 
