@@ -27,10 +27,10 @@ function App() {
   return (
     <div className="App">
       <ListContext.Provider value={{type:type, setType:setType, datingPeriod:datingPeriod, setDatingPeriod:setDatingPeriod, artist:artist, setArtist:setArtist}}>
-      <ThemeProvider theme={theme}>
-        <PrimaryContainer />
-        <Gallery />
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <PrimaryContainer />
+          <Gallery />
+        </ThemeProvider>
       </ListContext.Provider>
       <Footer />
     </div>

@@ -68,7 +68,7 @@ function TypeFilter() {
           disablePortal
           value={type}
           onChange={(event, newValue) => {
-            setType(newValue);
+            setType(newValue);            
           }}
           inputValue={inputType}
           onInputChange={(event, newInputValue) => {

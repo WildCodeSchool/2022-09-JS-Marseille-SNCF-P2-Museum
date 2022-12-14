@@ -17,39 +17,39 @@ const Gallery = () => {
   const {datingPeriod, setDatingPeriod} = useContext(ListContext);
   const {artist, setArtist} = useContext(ListContext);
 
-  console.log("artist",artist?.label)
-  console.log("periode:",datingPeriod?.id);
-  console.log("type:",type?.label)
-
   //getItems fait la requete API
   const getItems = () => {
-    console.log("get item", type?.label)
-    //si le type est null, fait la requête sans utiliser le type
-    if (type?.label == null){
-      console.log("test if")
-      axios
+    //variables de type string qui vont composer mon appel à l'API de manière dynamique
+    let myStr = "";
+    
+    let myTypeStr= `&type=${type?.label}`;
+    if(type?.label != undefined ){
+      myStr += myTypeStr; 
+    }
+
+    let myArtistStr=`&involvedMaker=${artist?.label}`;
+    if(artist?.label != undefined ){
+      myStr += myArtistStr; 
+    }
+
+    let myPeriodStr= `&f.dating.period=${datingPeriod?.id}`;
+    if(datingPeriod?.id != undefined ){
+      myStr += myPeriodStr; 
+    }
+    
+    //requête API
+    axios
       .get(
-        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=${page}&ps=9`
+        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=${page}&ps=9${myStr}`
       )
       .then(({ data: { artObjects } }) => {
         setPaintsItems(artObjects);
       });
-    }else{
-      //si type a un contenu, fait la requête API en utilisant la variable type?.label
-      console.log(type?.label, "else")
-    axios
-      .get(
-        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=${page}&ps=9&type=${type?.label}`
-      )
-      .then(({ data: { artObjects } }) => {
-        setPaintsItems(artObjects);
-      });}
   };
 
   //au changement de page et/ou type.label et/ou artist?.label et/ou datingPeriod?.id, relance la requete à l'API (via getItems)
   useEffect(() => {
     getItems();
-    console.log(page, "gallery");
   }, [page, type?.label, artist?.label, datingPeriod?.id]);
  
   

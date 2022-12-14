@@ -57,6 +57,7 @@ function DatingPeriod() {
           onChange={(event, newValue) => {
             setDatingPeriod(newValue);
           }}
+          
           inputValue={inputDatingPeriod}
           onInputChange={(event, newInputValue) => {
             setInputDatingPeriod(newInputValue);
