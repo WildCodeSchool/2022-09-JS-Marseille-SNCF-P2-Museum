@@ -1,60 +1,65 @@
-import React, { useState } from "react";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
-import Button from "@mui/material/Button";
+import * as React from "react";
+import Dialog from "@mui/material/Dialog";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import CloseIcon from "@mui/icons-material/Close";
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
+import { Image } from "mui-image";
 
-const CardImage = ({ image }) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement,
+  },
+  ref: React.Ref<unknown>
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
-  const style = {
-    position: "absolute",
-    width: 1300 ,
-    height: 700,
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    borderRadius: 5,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
+const CardImage = ({ image, imagePopup, title }) => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div>
-      <img
-        className="gallery-card-image"
+      <Image
         src={image}
-        alt="tableau"
-        onClick={handleOpen}
-      ></img>
-  
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
+        alt=""
+        style={{ animation: `fadeIn 1s` }}
+        onClick={handleClickOpen}
+        showLoading
+      />
+      <Dialog
+        fullScreen
         open={open}
         onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
+        TransitionComponent={Transition}
       >
-        
-        <Fade in={open}>
-          <Box sx={style}>
-             
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              <img src={image} width="100%" height="620px"></img>
+        <AppBar sx={{ position: "relative" }}>
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleClose}
+              aria-label="close"
+            >
+              <CloseIcon />
+            </IconButton>
+            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+              {title}
             </Typography>
-          </Box> 
-        </Fade>
-      </Modal>
+          </Toolbar>
+        </AppBar>
+        <img src={imagePopup} alt="" style={{ animation: `fadeIn 1s` }}></img>
+      </Dialog>
     </div>
   );
 };

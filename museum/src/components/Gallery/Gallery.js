@@ -7,6 +7,7 @@ import Masonry from "@mui/lab/Masonry";
 import ListContext from "../../contexts/ListContext";
 import "./Gallery.css";
 
+
 const Gallery = () => {
   //paintsItems permet de remplir la gallerie avec des oeuvres
   const [paintsItems, setPaintsItems] = useState([]);
@@ -54,13 +55,15 @@ const Gallery = () => {
  
   
   return (
-    <div className="gallery-body" id="startGallery">
+    <div className="gallery-body" >
       <div className="wrap">
         <Masonry columns={3} spacing={4}>
           {paintsItems.map((item, index) => (
             <CardBody
-              image={item?.webImage.url.replace("s0", "w300")}
+              image={item?.webImage.url.replace("s0", "w310")}
+              imagePopup={item?.webImage.url.replace("s0", "w3000")}
               title={item.title}
+              artist={item.principalOrFirstMaker}
             />
           ))}
         </Masonry>
