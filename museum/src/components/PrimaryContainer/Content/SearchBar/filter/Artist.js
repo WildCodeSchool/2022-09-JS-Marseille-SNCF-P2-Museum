@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import ListContext from '../../../../contexts/ListContext';
+import ListContext from '../../../../../contexts/ListContext';
 
 const artistList = [
   {label:"anoniem"},

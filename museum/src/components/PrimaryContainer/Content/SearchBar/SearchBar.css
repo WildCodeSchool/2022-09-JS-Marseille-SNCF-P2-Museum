@@ -16,3 +16,10 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+.navFilter {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
