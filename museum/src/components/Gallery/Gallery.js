@@ -45,6 +45,7 @@ const Gallery = () => {
       )
       .then(({ data: { artObjects } }) => {
         setPaintsItems(artObjects);
+     
       });
   };
 
@@ -53,9 +54,9 @@ const Gallery = () => {
     getItems();
   }, [page, type?.label, artist?.label, datingPeriod?.id]);
  
-  
+  console.log(paintsItems ,"coucou");
   return (
-    <div className="gallery-body" >
+    <div className="gallery-body">
       <div className="wrap">
         <Masonry columns={3} spacing={4}>
           {paintsItems.map((item, index) => (
@@ -68,7 +69,11 @@ const Gallery = () => {
           ))}
         </Masonry>
 
-        <GalleryButton page={page} setPage={setPage} />
+        <GalleryButton
+          page={page}
+          setPage={setPage}
+          paintsItems={paintsItems}
+        />
       </div>
 
       <GalleryFooter />

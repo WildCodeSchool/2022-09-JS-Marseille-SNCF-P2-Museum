@@ -5,7 +5,7 @@ function GalleryButton(props) {
    //const { page, setPage, getItems } = (props);
    const page = props.page;
    const setPage = props.setPage;
-   
+   const paintsItems = props.paintsItems;
 
      const handleChangePage=(event,page) => {
      setPage(page);
@@ -14,8 +14,6 @@ function GalleryButton(props) {
      startGallery.scrollIntoView();
        console.log({page},"button");
    }
-  
- 
 
  
    return (

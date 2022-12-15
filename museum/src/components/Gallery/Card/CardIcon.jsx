@@ -7,18 +7,21 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const CardIcon = (props) => {
  
       const [selected, setSelected] = useState(false);
-      
+     const iconButton = selected ? <FavoriteIcon /> : <FavoriteBorderIcon />;
+     console.log("patate : ",iconButton);
+
+    
       
     return (
-      <FavoriteBorderIcon
+      <IconButton
         value="check"
         selected={selected}
-        onChange={() => {
+        onClick={() => {
           setSelected(!selected);
         }}
       >
-        <FavoriteIcon />
-      </FavoriteBorderIcon>
+        {iconButton}
+      </IconButton>
     );
 };
 

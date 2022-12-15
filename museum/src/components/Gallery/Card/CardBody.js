@@ -5,8 +5,8 @@ import CardIcon from "./CardIcon";
 import "../Gallery.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import ListItemIcon from '@mui/material/ListItemIcon';
-import { flexbox } from "@mui/system";
+import ListItem from "@mui/material/ListItem";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
 
 const CardBody = (props) => {
 
@@ -19,12 +19,23 @@ const CardBody = (props) => {
         title={props.title}
         artist={props.artist}
       />
-      
+
       <CardContent>
-        <CardIcon selected={"setSelected"} />
-        <CardTitle title={props.title} artist={props.artist} />
+        <ListItem alignItems="flex-start">
+          <CardTitle title={props.title} artist={props.artist} />
+
+          <ListItemAvatar alignItems="flex-end">
+            <CardIcon selected={"setSelected"} />
+          </ListItemAvatar>
+        </ListItem>
       </CardContent>
     </Card>
   );
+
+ 
+
+
+
 };
 export default CardBody;
+
