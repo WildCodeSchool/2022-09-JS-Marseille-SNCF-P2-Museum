@@ -29,6 +29,16 @@
   height: 3em;
 }
 
+.NavTitle{
+  display: flex;
+    justify-content: space-around;
+    width: 22%;
+    align-items: center;
+}
+.NavTitle img{
+  height: 1em;
+}
+
 .NavButton{
   background-color:transparent;
 	border: 2px solid #7a867b;

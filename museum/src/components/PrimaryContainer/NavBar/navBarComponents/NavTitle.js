@@ -1,12 +1,12 @@
 import React from 'react';
-import Rijksmuseum from './rijksmuseum.svg'
+import Rijksmuseum from './rijksmuseum.png'
 
 function NavTitle() {
     return(
-        <>
-        <div>Plan your visit at </div>
-        <img src={Rijksmuseum} alt="logo de rijksmuseum"/>
-        </>
+        <div className='NavTitle'>
+            <p>Plan your visit at </p>
+            <img src={Rijksmuseum} alt="logo de rijksmuseum"/>
+        </div>
     );
 }
 
