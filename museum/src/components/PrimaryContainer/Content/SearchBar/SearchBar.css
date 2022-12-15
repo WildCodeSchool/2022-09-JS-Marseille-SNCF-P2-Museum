@@ -16,6 +16,15 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
+.NavTitle{
+  display: flex;
+    justify-content: space-around;
+    width: 22%;
+    align-items: center;
+}
+.NavTitle img{
+  height: 1em;
+}
 
 .navFilter {
   width: 60%;
