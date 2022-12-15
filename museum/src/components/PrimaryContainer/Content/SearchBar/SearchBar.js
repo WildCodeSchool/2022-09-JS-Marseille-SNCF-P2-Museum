@@ -1,5 +1,5 @@
 import React from "react";
-import Filter from "../../NavBar/Filter";
+import Filter from "./Filter";
 import "./SearchBar.css";
 
 function SearchBar({ BGcolor }) {
@@ -9,6 +9,7 @@ function SearchBar({ BGcolor }) {
     <div
       className="searchbar"
       id="startGallery"
+      
       style={{
         background: `${BGcolor}`,
       }}
