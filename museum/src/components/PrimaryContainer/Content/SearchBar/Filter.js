@@ -6,11 +6,11 @@ import DatingPeriod from './filter/DatingPeriod';
 function Filter() {
     
     return(
-        <div className='navFilter'>
+        <box className='navFilter'>
             <TypeFilter/>
             <Artist/>
             <DatingPeriod/>
-        </div>
+        </box>
     );
 }
 
