@@ -72,6 +72,7 @@ function Content(props) {
   const [count, setCount] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  console.log('isRunning', isRunning);
 
   useEffect(() => {
     if (isRunning) {
@@ -79,18 +80,17 @@ function Content(props) {
         setCount(count + 1);
 
         // redémarre le compteur à zéro et recommence à compter indéfiniment toutes les 4 secondes
-        /*if (count === 0) {
+        if (count === 0) {
             setTimeout(() => {
               setCount(0);
             }, 4000);
-            //getTinderArt();
-          }*/
+            getTinderArt();
+          }
       }, 1000);
       // retourne une fonction de nettoyage pour arrêter l'intervalle lorsque le composant est désactivé
       return () => clearInterval(interval);
     }
-    
-  }, [count]);
+  }, [count, isRunning]);
 
   return (
     <>
@@ -113,7 +113,6 @@ function Content(props) {
               objectCollection={workOfArt.artObject?.objectCollection}
             />
             <Stack direction="row" spacing={2}>
-              <h2>{count}</h2>
               <Button
                 variant="contained"
                 onClick={getTinderArt}
