@@ -4,9 +4,12 @@ import Article from "./article/Article";
 import axios from "axios";
 import "./Content.css";
 import Button from "@mui/material/Button";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import PauseIcon from "@mui/icons-material/Pause";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+
 import Stack from "@mui/material/Stack";
 import SearchBar from "./SearchBar/SearchBar";
 import theme from "../../../App";
@@ -61,7 +64,33 @@ function Content(props) {
     getTinderArt();
   }, []);
 
-  //console.log("hex[0] : ", workOfArt.artObject?.colorsWithNormalization[0].normalizedHex);
+  //slider !
+  // 1 - losque je clique le bouton play, un compteur se lance
+  // 2 - si je reclique le bouton play il stoppe le compteur
+  // 3 - lorsque le compteur arrive à 4 secondes, la fonction getTinderArt est lancé pour changer le tableau
+
+  const [count, setCount] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    if (isRunning) {
+      const interval = setInterval(() => {
+        setCount(count + 1);
+
+        // redémarre le compteur à zéro et recommence à compter indéfiniment toutes les 4 secondes
+        /*if (count === 0) {
+            setTimeout(() => {
+              setCount(0);
+            }, 4000);
+            //getTinderArt();
+          }*/
+      }, 1000);
+      // retourne une fonction de nettoyage pour arrêter l'intervalle lorsque le composant est désactivé
+      return () => clearInterval(interval);
+    }
+    
+  }, [count]);
 
   return (
     <>
@@ -84,6 +113,7 @@ function Content(props) {
               objectCollection={workOfArt.artObject?.objectCollection}
             />
             <Stack direction="row" spacing={2}>
+              <h2>{count}</h2>
               <Button
                 variant="contained"
                 onClick={getTinderArt}
@@ -91,16 +121,34 @@ function Content(props) {
               >
                 Next
               </Button>
-              <Button variant="contained" startIcon={<PlayCircleIcon />}>
-                Play
-              </Button>
-              <Button variant="contained" startIcon={<FavoriteBorderIcon />}>
+
+              <Button
+                variant="contained"
+                selected={isFavorite}
+                startIcon={
+                  isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />
+                }
+                onClick={() => {
+                  setIsFavorite(!isFavorite);
+                }}
+              >
                 Favorite
+              </Button>
+
+              <Button
+                variant="contained"
+                selected={isRunning}
+                startIcon={isRunning ? <PauseIcon /> : <PlayArrowIcon />}
+                onClick={() => {
+                  setIsRunning(!isRunning);
+                }}
+              >
+                {isRunning ? "Stop" : "Play"}
               </Button>
             </Stack>
           </div>
         </div>
-            </div>
+      </div>
       <SearchBar />
     </>
   );
