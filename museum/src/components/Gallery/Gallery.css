@@ -18,7 +18,7 @@
   flex-direction: row;
 }
 
-.gallery-card-body {
+.Card {
   width: 32%;
   position: relative;
   margin-bottom: 2%;
@@ -29,7 +29,7 @@
   box-sizing: border-box;
 }
 
-.gallery-card-body:hover {
+.Card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 

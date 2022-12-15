@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
-import { color } from '@mui/system';
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 
 const CardIcon = (props) => {
@@ -10,8 +10,7 @@ const CardIcon = (props) => {
       
       
     return (
-      <IconButton
-    
+      <FavoriteBorderIcon
         value="check"
         selected={selected}
         onChange={() => {
@@ -19,7 +18,7 @@ const CardIcon = (props) => {
         }}
       >
         <FavoriteIcon />
-      </IconButton>
+      </FavoriteBorderIcon>
     );
 };
 
