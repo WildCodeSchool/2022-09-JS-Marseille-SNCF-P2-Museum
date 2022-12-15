@@ -4,11 +4,12 @@ import NavBar from "./NavBar/NavBar";
 import Content from "./Content/Content";
 
 //on tire le JSON d'une seule oeuvre artObject
+
 const uniqueArt = {
   artObject: {
     title: "De Nachtwacht",
     webImage: {
-      url: "https://lh3.googleusercontent.com/J-mxAE7CPu-DXIOx4QKBtb0GC4ud37da1QK7CzbTIDswmvZHXhLm4Tv2-1H3iBXJWAW_bHm7dMl3j5wv_XiWAg55VOM=w500",
+      url: "https://lh3.googleusercontent.com/J-mxAE7CPu-DXIOx4QKBtb0GC4ud37da1QK7CzbTIDswmvZHXhLm4Tv2-1H3iBXJWAW_bHm7dMl3j5wv_XiWAg55VOM=w600-h350",
     },
     color: {
       hex: "#261808",
