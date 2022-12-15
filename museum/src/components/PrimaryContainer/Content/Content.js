@@ -12,7 +12,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import Stack from "@mui/material/Stack";
 import SearchBar from "./SearchBar/SearchBar";
-import theme from "../../../App";
 
 function Content(props) {
   const { workOfArt, setWorkOfArt } = props;
@@ -21,7 +20,7 @@ function Content(props) {
     axios
       //ATTENTION BIENTOT FILTRE
       .get(
-        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=50&type=painting`
+        `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=100&type=painting`
       )
       // Extract the DATA from the received response
       .then((response) => response.data)
@@ -60,10 +59,6 @@ function Content(props) {
       });
   };
 
-  useEffect(() => {
-    getTinderArt();
-  }, []);
-
   //slider !
   // 1 - losque je clique le bouton play, un compteur se lance
   // 2 - si je reclique le bouton play il stoppe le compteur
@@ -72,7 +67,14 @@ function Content(props) {
   const [count, setCount] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  console.log('isRunning', isRunning);
+  const [isNext, setIsNext] = useState();
+
+  useEffect(() => {
+    if (isNext) {
+      getTinderArt();
+      console.log("useEffect isNext : ", isNext);
+    }
+  }, [isNext]);
 
   useEffect(() => {
     if (isRunning) {
@@ -81,11 +83,11 @@ function Content(props) {
 
         // redémarre le compteur à zéro et recommence à compter indéfiniment toutes les 4 secondes
         if (count === 0) {
-            setTimeout(() => {
-              setCount(0);
-            }, 4000);
-            getTinderArt();
-          }
+          setTimeout(() => {
+            setCount(0);
+          }, 4000);
+          getTinderArt();
+        }
       }, 1000);
       // retourne une fonction de nettoyage pour arrêter l'intervalle lorsque le composant est désactivé
       return () => clearInterval(interval);
@@ -97,7 +99,7 @@ function Content(props) {
       <div className="content-container">
         <div className="wrap">
           <FeatureImage
-            image={workOfArt.artObject?.webImage.url.replace("s0", "w500")}
+            image={workOfArt.artObject?.webImage.url.replace("s0", "w600-h350")}
             imagePopup={workOfArt.artObject?.webImage.url.replace(
               "s0",
               "w2000"
@@ -115,7 +117,7 @@ function Content(props) {
             <Stack direction="row" spacing={2}>
               <Button
                 variant="contained"
-                onClick={getTinderArt}
+                onClick={setIsNext}
                 startIcon={<NavigateNextIcon />}
               >
                 Next
