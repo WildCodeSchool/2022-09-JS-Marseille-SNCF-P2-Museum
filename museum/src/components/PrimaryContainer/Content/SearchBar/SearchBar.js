@@ -12,9 +12,9 @@ function SearchBar({ BGcolor }) {
         background: `${BGcolor}`,
       }}
     >
-      <div className="wrap">
-        <Filter />
-      </div>
+      
+        <Filter className="wrap"/>
+      
     </div>
   );
 }
