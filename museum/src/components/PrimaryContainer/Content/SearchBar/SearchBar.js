@@ -9,6 +9,7 @@ function SearchBar({ BGcolor }) {
     <div
       className="searchbar"
       id="startGallery"
+      
       style={{
         background: `${BGcolor}`,
       }}

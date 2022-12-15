@@ -4,6 +4,9 @@ import Article from "./article/Article";
 import axios from "axios";
 import "./Content.css";
 import Button from "@mui/material/Button";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Stack from "@mui/material/Stack";
 import SearchBar from "./SearchBar/SearchBar";
 import theme from "../../../App";
@@ -81,10 +84,19 @@ function Content(props) {
               objectCollection={workOfArt.artObject?.objectCollection}
             />
             <Stack direction="row" spacing={2}>
-              <Button variant="contained" onClick={getTinderArt}>
+              <Button
+                variant="contained"
+                onClick={getTinderArt}
+                startIcon={<NavigateNextIcon />}
+              >
                 Next
               </Button>
-              <Button variant="contained">Favorite</Button>
+              <Button variant="contained" startIcon={<PlayCircleIcon />}>
+                Play
+              </Button>
+              <Button variant="contained" startIcon={<FavoriteBorderIcon />}>
+                Favorite
+              </Button>
             </Stack>
           </div>
         </div>
