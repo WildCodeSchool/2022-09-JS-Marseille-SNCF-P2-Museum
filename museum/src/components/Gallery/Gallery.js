@@ -30,7 +30,7 @@ const Gallery = () => {
   }, [page]);
 
   return (
-    <div className="gallery-body" id="startGallery">
+    <div className="gallery-body" >
       <div className="wrap">
         <Masonry columns={3} spacing={4}>
           {paintsItems.map((item, index) => (
