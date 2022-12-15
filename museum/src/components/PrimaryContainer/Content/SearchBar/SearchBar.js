@@ -8,13 +8,14 @@ function SearchBar({ BGcolor }) {
   return (
     <div
       className="searchbar"
+      id="startGallery"
       style={{
         background: `${BGcolor}`,
       }}
     >
-      <div className="wrap">
-        <Filter />
-      </div>
+      
+        <Filter className="wrap"/>
+      
     </div>
   );
 }

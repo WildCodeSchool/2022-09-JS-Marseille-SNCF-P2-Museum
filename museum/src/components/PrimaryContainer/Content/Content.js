@@ -88,7 +88,7 @@ function Content(props) {
             </Stack>
           </div>
         </div>
-      </div>
+            </div>
       <SearchBar />
     </>
   );
