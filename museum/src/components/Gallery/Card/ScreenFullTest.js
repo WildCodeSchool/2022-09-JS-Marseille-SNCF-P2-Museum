@@ -1,26 +1,24 @@
+import React, {useState} from "react";
+import Dialog from "@mui/material/Dialog";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import CloseIcon from "@mui/icons-material/Close";
+import Slide from "@mui/material/Slide";
+import { TransitionProps } from "@mui/material/transitions";
 
-
-import React, {useState}from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import ListItemText from '@mui/material/ListItemText';
-import ListItem from '@mui/material/ListItem';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
-import Slide from '@mui/material/Slide';
-import CardImage from './CardImage';
-
-
-    const CardImage = ({ image }) => {
-  const [open, setOpen] = useState(false);
-const Transition = forwardRef(function Transition(props, ref) {
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement,
+  },
+  ref: React.Ref<unknown>
+) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
+const ScreenFullTest = ({ image, imagePopup, title }) => {
+  const [open, setOpen] = useState(false);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -36,6 +34,7 @@ const Transition = forwardRef(function Transition(props, ref) {
         src={image}
         alt="tableau"
         onClick={handleClickOpen}
+        cursor="pointer"
       ></img>
 
       <Dialog
@@ -55,33 +54,14 @@ const Transition = forwardRef(function Transition(props, ref) {
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Sound
+              {title}
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              save
-            </Button>
           </Toolbar>
         </AppBar>
-        <List>
-          <ListItem Button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
-          <Divider />
-          <ListItem Button>
-            <ListItemText
-              primary="Default notification ringtone"
-              secondary="Tethys"
-            />
-          </ListItem>
-        </List>
+        <img src={imagePopup} alt="" style={{ animation: `fadeIn 1s` }}></img>
       </Dialog>
     </div>
   );
-}
+};
 
-export default CardImage ;
- 
-  
-
-
-  
+export default ScreenFullTest;

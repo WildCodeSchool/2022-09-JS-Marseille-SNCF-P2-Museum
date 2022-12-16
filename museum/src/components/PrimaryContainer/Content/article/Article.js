@@ -1,6 +1,6 @@
 import React from "react";
 import "./Article.css";
-import Chip from "@mui/material/Chip";
+import Container from '@mui/material/Container';
 
 function Article({ title, artist, description, objectCollection }) {
   return (

@@ -1,15 +1,16 @@
 import React from "react";
 import "./NavBar.css";
-import Filter from "./Filter";
-import NavButton from "./NavButton";
-import Logo from "./Logo";
+import NavButton from "./navBarComponents/NavButton";
+import NavTitle from "./navBarComponents/NavTitle";
+import Logo from "./navBarComponents/Logo";
 
 function NavBar() {
+  
   return (
     <div className="NavBar">
       <div className="wrap">
         <Logo/>
-        <Filter />
+        <NavTitle />
         <NavButton />
       </div>
     </div>
