@@ -6,6 +6,8 @@
   color: #E8DBCB;
 }
 
+/**/
+
 .footer .wrap {
   width: var(--wrap);
   display: flex;
@@ -17,13 +19,13 @@
   padding-top: 40px;
 }
 
-.footerContent {
+/*.footerContent {
   display: flex;
   flex-direction: row;
   gap: 20px;
   align-items: stretch;
   justify-content: space-between;
-}
+}*/
 
 .footerLogo {
    border-right: #7A867D 1px solid;
@@ -83,7 +85,7 @@
   height: 33rem;
 }
 
-.footerLegacy {
+/*.footerLegacy {
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -92,12 +94,12 @@
   border-top: #7A867D 1px solid;
   justify-content: space-between;
   padding-top: 10px;
-}
+}*/
 
-.footerLegacy img {
+/*.footerLegacy img {
   width: 50px;
   height: 50px;
-}
+}*/
 
 /* modif modal*/
 
