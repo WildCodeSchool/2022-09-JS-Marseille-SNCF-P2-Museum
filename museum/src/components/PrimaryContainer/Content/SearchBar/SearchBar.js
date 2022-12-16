@@ -3,8 +3,6 @@ import Filter from "./Filter";
 import "./SearchBar.css";
 
 function SearchBar({ BGcolor }) {
-  console.log("BGcolor", BGcolor);
-
   return (
     <div
       className="searchbar"

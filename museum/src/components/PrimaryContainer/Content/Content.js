@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import FeatureImage from "./FeatureImage/FeatureImage";
 import Article from "./article/Article";
 import axios from "axios";
@@ -9,9 +9,9 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import PauseIcon from "@mui/icons-material/Pause";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
 import Stack from "@mui/material/Stack";
 import SearchBar from "./SearchBar/SearchBar";
+import IsSelectedContext from "../../../contexts/IsSelectedContext";
 
 function Content(props) {
   const { workOfArt, setWorkOfArt } = props;
@@ -26,14 +26,11 @@ function Content(props) {
       .then((response) => response.data)
       // Use this data to update the state
       .then((data) => {
-        //console.log("data ensemble des tableaux", data);
 
         //on random un nombre sur la totalité de la base de 100
         let randomNbr = Math.floor(Math.random() * data.artObjects.length);
-        //console.log("random number", randomNbr);
-
+        
         //On sort l'ID du tableau random
-        //console.log("ID aléatoire", data.artObjects[randomNbr].objectNumber);
         let winID = data.artObjects[randomNbr].objectNumber;
 
         axios
@@ -53,8 +50,6 @@ function Content(props) {
               "s0",
               "w1200"
             )}')"`);
-
-            console.log("machin : ", data);
           });
       });
   };
@@ -63,18 +58,35 @@ function Content(props) {
   // 1 - losque je clique le bouton play, un compteur se lance
   // 2 - si je reclique le bouton play il stoppe le compteur
   // 3 - lorsque le compteur arrive à 4 secondes, la fonction getTinderArt est lancé pour changer le tableau
-
+  const {isSelected, setIsSelected} = useContext(IsSelectedContext);
+  //const myFavorites = !isSelected.includes(workOfArt.artObject);
   const [count, setCount] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isNext, setIsNext] = useState();
+  console.log("myFaisSelectedvorites", isSelected );
 
   useEffect(() => {
+    setIsFavorite(false);
     if (isNext) {
       getTinderArt();
-      console.log("useEffect isNext : ", isNext);
-    }
+      console.log("workofart",workOfArt.artObject)
+    }    
   }, [isNext]);
+
+ useEffect(() => {
+    console.log("1 useEffect", isSelected)
+    if (isFavorite === true && !isSelected.includes(workOfArt.artObject)) {
+      setIsSelected([...isSelected, workOfArt.artObject])
+    } /*else {let index = isSelected.indexOf(workOfArt.artObject);
+    console.log("index", index);
+    isSelected.splice(index,1);} ;*/
+  }
+  , [isFavorite]);
+  //si je clique sur favorite j'ajoute au tableau isSelected le tableau
+  //si je clique a nouveau sur le favorite, on l'enleve du isSelected
+  //si j'appuie sur next je conseve le tableau
+  console.log("selected", isSelected);
 
   useEffect(() => {
     if (isRunning) {
@@ -94,6 +106,7 @@ function Content(props) {
     }
   }, [count, isRunning]);
 
+ 
   return (
     <>
       <div className="content-container">

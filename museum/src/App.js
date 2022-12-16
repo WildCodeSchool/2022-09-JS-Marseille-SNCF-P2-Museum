@@ -4,6 +4,7 @@ import PrimaryContainer from './components/PrimaryContainer/PrimaryContainer';
 import Gallery from './components/Gallery/Gallery';
 import Footer from './components/Footer/Footer';
 import ListContext from "./contexts/ListContext";
+import IsSelectedContext from "./contexts/IsSelectedContext"
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -31,14 +32,16 @@ function App() {
   const [type, setType] = useState("");
   const [datingPeriod, setDatingPeriod] = useState("");
   const [artist, setArtist] = useState("");
-  console.log("App",type)
+  const [isSelected, setIsSelected] = useState([]);
   return (
     <div className="App">
       <ListContext.Provider value={{type:type, setType:setType, datingPeriod:datingPeriod, setDatingPeriod:setDatingPeriod, artist:artist, setArtist:setArtist}}>
-        <ThemeProvider theme={theme}>
-          <PrimaryContainer />
-          <Gallery />
-        </ThemeProvider>
+        <IsSelectedContext.Provider value={{isSelected:isSelected, setIsSelected:setIsSelected}}>
+          <ThemeProvider theme={theme}>
+            <PrimaryContainer />
+            <Gallery />
+          </ThemeProvider>
+        </IsSelectedContext.Provider> 
       </ListContext.Provider>
       <Footer />
     </div>
