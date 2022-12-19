@@ -8,6 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { Image } from "mui-image";
+import Artist from "../../PrimaryContainer/Content/SearchBar/filter/Artist";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -18,7 +19,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const CardImage = ({ image, imagePopup, title }) => {
+const CardImage = ({ image, imagePopup, title, artist }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -54,7 +55,7 @@ const CardImage = ({ image, imagePopup, title }) => {
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              {title}
+              {title} - {artist}
             </Typography>
           </Toolbar>
         </AppBar>
