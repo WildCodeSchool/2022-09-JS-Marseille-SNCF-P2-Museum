@@ -2,15 +2,16 @@ import React from 'react';
 import TypeFilter from './filter/Type';
 import Artist from './filter/Artist';
 import DatingPeriod from './filter/DatingPeriod';
+import Box from "@mui/material/Box";
 
 function Filter() {
     
     return(
-        <box className='navFilter'>
+        <Box className='navFilter'>
             <TypeFilter/>
             <Artist/>
             <DatingPeriod/>
-        </box>
+        </Box>
     );
 }
 
