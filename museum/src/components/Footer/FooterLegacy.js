@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack } from "@mui/system";
-import { Divider } from "@mui/material";
+
+import "./Footer.css";
 
 
 const FooterLegacy = () => {
@@ -8,19 +9,21 @@ const FooterLegacy = () => {
   return (
     <Stack
       direction={{ xs: "column", sm: "row" }}
-      justifyContent="space-around"
+      justifyContent="space-between"
       alignItems="center"
-      divider={<Divider orientation="horizontal" flexItem />}
-      spacing={{ xs: 1, sm: 2, md: 7 }}
+      spacing={{ xs: 1, sm: 2, md: 10 }}
+      borderTop={1}
+      paddingTop={2}
     >
-      <Divider component="" />
       <img src="./R.png" alt="" />
-      <p>En partenariat avec Musée de France</p>
-      <p>Mentions Legales</p>
-      <p>Données Personnelles</p>
-      <p>Crédits Photographiques</p>
+      <h5>En partenariat avec Musée de France</h5>
+      <h5>Mentions Legales</h5>
+      <h5>Données Personnelles</h5>
+      <h5>Crédits Photographiques</h5>
     </Stack>
   );
 };
 
 export default FooterLegacy;
+
+//voir l.16 pour trait horizontal 

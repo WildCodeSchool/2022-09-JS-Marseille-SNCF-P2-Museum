@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import "./Footer.css";
+//import "./Footer.css";
 
 
 const style = {
@@ -30,7 +30,18 @@ export default function FooterModalMap() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>NOUS TROUVER</Button>
+      <Button
+        variant="contained"
+        onClick={handleOpen}
+        sx={{
+          position: "relative",
+          bottom: 200,
+          left: "25%",
+          zIndex: 0,
+        }}
+      >
+        NOUS TROUVER
+      </Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -57,3 +68,5 @@ export default function FooterModalMap() {
     </div>
   );
 }
+
+// finaliser avec Fred
