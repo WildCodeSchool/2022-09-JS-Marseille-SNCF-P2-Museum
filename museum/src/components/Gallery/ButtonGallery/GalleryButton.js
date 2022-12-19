@@ -56,13 +56,17 @@ function GalleryButton(props) {
      startGallery.scrollIntoView();
        console.log({page},"button");
    }
-   
+  
+ 
+
+ 
    return (
-      <div className="GalleryButton"> 
+      <div className="GalleryButton" > 
          <Pagination 
             /*count = nombre total d'éléments à paginer en divisant le nombre total d éléments par 9(nombre d oeuvres par page) et en arrondissant le résultat à l entier supérieur.*/
             count={Math.ceil(totalNumber.length /9)}
             color="primary" 
+           
             value={page} 
             onChange={handleChangePage}>
          </Pagination>
