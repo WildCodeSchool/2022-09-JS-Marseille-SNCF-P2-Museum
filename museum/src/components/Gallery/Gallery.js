@@ -23,17 +23,17 @@ const Gallery = () => {
     let myStr = "";
 
     let myTypeStr = `&type=${type?.label}`;
-    if (type?.label != undefined) {
+    if (type?.label !== undefined) {
       myStr += myTypeStr;
     }
 
     let myArtistStr = `&involvedMaker=${artist?.label}`;
-    if (artist?.label != undefined) {
+    if (artist?.label !== undefined) {
       myStr += myArtistStr;
     }
 
     let myPeriodStr = `&f.dating.period=${datingPeriod?.id}`;
-    if (datingPeriod?.id != undefined) {
+    if (datingPeriod?.id !== undefined) {
       myStr += myPeriodStr;
     }
 
@@ -60,7 +60,7 @@ const Gallery = () => {
           <Masonry columns={{ xs: 1, sm: 2, md:3,lg:4 }} spacing={4}>
             {paintsItems.map((item, index) => (
               <CardBody
-              ket={index}
+                key={index}
                 image={item?.webImage.url.replace("s0", "w310")}
                 imagePopup={item?.webImage.url.replace("s0", "w3000")}
                 title={item.title}
