@@ -46,6 +46,7 @@ const Gallery = () => {
       .then(({ data: { artObjects } }) => {
         setPaintsItems(artObjects);
       });
+      console.log(paintsItems)
   };
 
   //au changement de page et/ou type.label et/ou artist?.label et/ou datingPeriod?.id, relance la requete à l'API (via getItems)
@@ -60,6 +61,7 @@ const Gallery = () => {
         <Masonry columns={3} spacing={4}>
           {paintsItems.map((item, index) => (
             <CardBody
+              key={index}
               image={item?.webImage.url.replace("s0", "w310")}
               imagePopup={item?.webImage.url.replace("s0", "w3000")}
               title={item.title}
