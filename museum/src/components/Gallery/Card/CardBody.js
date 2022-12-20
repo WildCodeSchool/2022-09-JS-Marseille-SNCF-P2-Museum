@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import CardImage from "./CardImage";
+
 import CardTitle from "./CardTitle";
 import CardIcon from "./CardIcon";
 import "../Gallery.css";
@@ -24,25 +25,34 @@ const CardBody = (props) => {
   }, [selected]);
 
   return (
-    <Card sx={{ maxWidth: 345 }} elevation={8} >
-      <CardImage
-        image={props.image}
-        imagePopup={props.imagePopup}
-        title={props.title}
-        artist={props.artist}
-      />
-      <CardContent>
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          spacing={2}
-        >
-          <CardTitle title={props.title} artist={props.artist} />
-          <CardIcon selected={selected} setSelected={setSelected}/>
-        </Stack>
-      </CardContent>
-    </Card>
+    <>
+      <Card
+        elevation={4}
+        sx={{
+          maxWidth: { xs: "100%", sm: "50%", md: "33%", lg: "25%" },
+          backgroundColor: "bgCard.main",
+        }}
+      >
+        <CardImage
+          image={props.image}
+          alt={props.title}
+          imagePopup={props.imagePopup}
+          title={props.title}
+          artist={props.artist}
+        />
+        <CardContent>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <CardTitle title={props.title} artist={props.artist} />
+            <CardIcon selected={selected} setSelected={setSelected}/>
+          </Stack>
+        </CardContent>
+      </Card>
+    </>
   );
 };
 export default CardBody;

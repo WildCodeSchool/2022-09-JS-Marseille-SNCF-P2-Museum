@@ -18,10 +18,11 @@ const CardIcon = (props) => {
       onClick={() => {
         setSelected(!selected);
       }}
+      color="primary"
     >
       {iconButton}
     </IconButton>
   );
 };
 
-export default CardIcon ;
+export default CardIcon;

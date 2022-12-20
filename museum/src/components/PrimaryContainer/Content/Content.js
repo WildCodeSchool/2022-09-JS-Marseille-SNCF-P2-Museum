@@ -15,16 +15,15 @@ import IsSelectedContext from "../../../contexts/IsSelectedContext";
 
 function Content(props) {
   const { workOfArt, setWorkOfArt } = props;
-  const {isSelected, setIsSelected} = useContext(IsSelectedContext);
+  const { isSelected, setIsSelected } = useContext(IsSelectedContext);
   const [isFavorite, setIsFavorite] = useState(false);
   const [count, setCount] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   function displayIcon() {
     return isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />;
   }
-  
 
   const getTinderArt = async () => {
     try {
@@ -33,22 +32,22 @@ function Content(props) {
         `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=100&type=painting`
       );
       const data = response.data;
-  
+
       //on random un nombre sur la totalité de la base de 100
       let randomNbr = Math.floor(Math.random() * data.artObjects.length);
-  
+
       //On sort l'ID du tableau random
       let winID = data.artObjects[randomNbr].objectNumber;
-  
+
       const response2 = await axios.get(
         `https://www.rijksmuseum.nl/api/en/collection/${winID}?key=DIccpaSN`
       );
       const data2 = response2.data;
       setWorkOfArt(data2);
       console.log("data2", data2);
-      if (!isSelected.includes(data2.artObject)){
-        setIsFavorite(false)
-        console.log("gettinder isfavorite", isFavorite)
+      if (!isSelected.includes(data2.artObject)) {
+        setIsFavorite(false);
+        console.log("gettinder isfavorite", isFavorite);
         displayIcon(!isFavorite);
       }
       setIsLoading(false);
@@ -62,22 +61,28 @@ function Content(props) {
       console.error(error);
     }
   };
-  
- useEffect(() => {
-  console.log("début useEffect is loading", isLoading);
-  if (isLoading) return;
-    console.log("début useEffect isFavorite selected", isSelected)
-    console.log("début useEffect isFavorite isFavorite", isFavorite)
-    console.log("début useEffect isFavorite workOfArt", workOfArt.artObject?.title)
-  if (isFavorite === true && !isSelected.includes(workOfArt.artObject)) {
-    setIsSelected([...isSelected, workOfArt.artObject])
-  }else if(isFavorite == false && isSelected.includes(workOfArt.artObject)) {
-    let index = isSelected.indexOf(workOfArt.artObject);
-    console.log("index", index);
-    isSelected.splice(index,1);
-  };}, [isFavorite]);
-  console.log(" fin use effect isFavorite selected", isSelected);
 
+  useEffect(() => {
+    console.log("début useEffect is loading", isLoading);
+    if (isLoading) return;
+    console.log("début useEffect isFavorite selected", isSelected);
+    console.log("début useEffect isFavorite isFavorite", isFavorite);
+    console.log(
+      "début useEffect isFavorite workOfArt",
+      workOfArt.artObject?.title
+    );
+    if (isFavorite === true && !isSelected.includes(workOfArt.artObject)) {
+      setIsSelected([...isSelected, workOfArt.artObject]);
+    } else if (
+      isFavorite == false &&
+      isSelected.includes(workOfArt.artObject)
+    ) {
+      let index = isSelected.indexOf(workOfArt.artObject);
+      console.log("index", index);
+      isSelected.splice(index, 1);
+    }
+  }, [isFavorite]);
+  console.log(" fin use effect isFavorite selected", isSelected);
 
   //slider !
   // 1 - losque je clique le bouton play, un compteur se lance
@@ -102,64 +107,79 @@ function Content(props) {
     }
   }, [count, isRunning]);
 
- 
   return (
     <>
-      <div className="content-container">
-        <div className="wrap">
-          <FeatureImage
-            image={workOfArt.artObject?.webImage.url.replace("s0", "w600-h350")}
-            imagePopup={workOfArt.artObject?.webImage.url.replace(
-              "s0",
-              "w2000"
-            )}
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        justifyContent="center"
+        alignItems="flex-start"
+        spacing={2}
+        pt={10}
+        pb={8}
+        pl={3}
+        pr={3}
+        className={"content-container"}
+      >
+        <FeatureImage
+          image={workOfArt.artObject?.webImage.url.replace("s0", "w600-h350")}
+          imagePopup={workOfArt.artObject?.webImage.url.replace("s0", "w2000")}
+          title={workOfArt.artObject?.title}
+          artist={workOfArt.artObject?.label.makerLine}
+          width={{ sm: "100%", md: "50%" }}
+        />
+        <Stack
+          direction="column"
+          justifyContent="center"
+          alignItems="flex-start"
+          spacing={2}
+          width={{ sm: "100%", md: "50%" }}
+        >
+          <Article
             title={workOfArt.artObject?.title}
             artist={workOfArt.artObject?.label.makerLine}
+            description={workOfArt.artObject?.label.description}
+            objectCollection={workOfArt.artObject?.objectCollection}
           />
-          <div className="content-article-container">
-            <Article
-              title={workOfArt.artObject?.title}
-              artist={workOfArt.artObject?.label.makerLine}
-              description={workOfArt.artObject?.label.description}
-              objectCollection={workOfArt.artObject?.objectCollection}
-            />
-            <Stack direction="row" spacing={2}>
-              <Button
-                variant="contained"
-                onClick={() => { setIsLoading(true); getTinderArt(); }}
-                startIcon={<NavigateNextIcon />}
-              >
-                Next
-              </Button>
+          <Stack
+            direction={"row"}
+            spacing={2}
+          >
+            <Button
+              variant="contained"
+              onClick={() => {
+                setIsLoading(true);
+                getTinderArt();
+              }}
+              startIcon={<NavigateNextIcon />}
+            >
+              Suivant
+            </Button>
 
-              <Button
-                variant="contained"
-                selected={isFavorite}
-                startIcon={
-                  displayIcon()
-                }
-                onClick={() => {
-                  setIsFavorite(!isFavorite);
-                }}
-              >
-                Favorite
-              </Button>
+            <Button
+              variant="contained"
+              selected={isFavorite}
+              startIcon={displayIcon()}
+              onClick={() => {
+                setIsFavorite(!isFavorite);
+              }}
+            >
+              Favori
+            </Button>
 
-              <Button
-                variant="contained"
-                selected={isRunning}
-                startIcon={isRunning ? <PauseIcon /> : <PlayArrowIcon />}
-                onClick={() => {
-                  setIsRunning(!isRunning);
-                }}
-              >
-                {isRunning ? "Stop" : "Play"}
-              </Button>
-            </Stack>
-          </div>
-        </div>
-      </div>
-      <SearchBar />
+            <Button
+              variant="contained"
+              selected={isRunning}
+              startIcon={isRunning ? <PauseIcon /> : <PlayArrowIcon />}
+              onClick={() => {
+                setIsRunning(!isRunning);
+              }}
+            >
+              {isRunning ? "Stop" : "Play"}
+            </Button>
+          </Stack>
+        </Stack>
+      </Stack>
+      <SearchBar  />
     </>
   );
 }

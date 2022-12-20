@@ -64,7 +64,6 @@ const Gallery = () => {
             imagePopup={item?.webImage.url.replace("s0", "w3000")}
             title={item.title}
             artist={item.principalOrFirstMaker}
-            /*selected={selected}*/
             item={item}
           />
         ))}
