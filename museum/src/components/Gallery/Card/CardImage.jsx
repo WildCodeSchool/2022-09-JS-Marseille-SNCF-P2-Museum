@@ -7,9 +7,7 @@ import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import CardMedia from "@mui/material/CardMedia";
-import { TransitionProps } from "@mui/material/transitions";
-import { Image } from "mui-image";
-import Artist from "../../PrimaryContainer/Content/SearchBar/Filter/Artist";
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
