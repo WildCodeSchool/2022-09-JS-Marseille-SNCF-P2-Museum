@@ -1,19 +1,22 @@
 import React from "react";
 
-import "./Footer.css";
-
-import FooterContent from "./FooterContent";
-import FooterLegacy from "./FooterLegacy";
+import FooterContent from "./FooterContent/FooterContent";
+import FooterLegacy from "./FooterLegacy/FooterLegacy";
+import Stack from "@mui/material/Stack";
 
 const Footer = () => {
-
   return (
-    <div className="footer">
-      <div className="wrap">
-        <FooterContent />
-        <FooterLegacy />
-      </div>
-    </div>
+    <Stack
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      spacing={2}
+      mt={3}
+      sx={{ maxWidth:  "1200px" }}
+    >
+      <FooterContent />
+      <FooterLegacy />
+    </Stack>
   );
 };
 
