@@ -27,6 +27,10 @@ const theme = createTheme({
       main: "#E8DBCB",
       contrastText: "#000",
     },
+    footerBG: {
+      main: "#060403",
+      contrastText: "#fff",
+    },
   },
   typography: {
     subtitle1: {
@@ -77,7 +81,18 @@ function App() {
           </ThemeProvider>
         </IsSelectedContext.Provider>
       </ListContext.Provider>
-      <Footer />
+      <ThemeProvider theme={theme}>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          alignItems="flex-start"
+          spacing={2}
+          variant="footerBG"
+          bcolor="footerBG"
+        >
+          <Footer />
+        </Stack>
+      </ThemeProvider>
     </div>
   );
 }
