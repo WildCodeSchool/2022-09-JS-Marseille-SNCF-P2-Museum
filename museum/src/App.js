@@ -88,6 +88,7 @@ function App() {
   const [datingPeriod, setDatingPeriod] = useState("");
   const [artist, setArtist] = useState("");
   const [isSelected, setIsSelected] = useState([]);
+  
   return (
     <div className="App">
       <ListContext.Provider
