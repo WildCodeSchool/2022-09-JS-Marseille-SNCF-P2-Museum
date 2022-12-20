@@ -114,8 +114,8 @@ function Content(props) {
         justifyContent="center"
         alignItems="flex-start"
         spacing={2}
-        pt={2}
-        pb={4}
+        pt={10}
+        pb={8}
         pl={3}
         pr={3}
         className={"content-container"}
@@ -179,7 +179,7 @@ function Content(props) {
           </Stack>
         </Stack>
       </Stack>
-      <SearchBar />
+      <SearchBar  />
     </>
   );
 }

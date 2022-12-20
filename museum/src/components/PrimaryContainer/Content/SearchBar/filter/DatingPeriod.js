@@ -51,31 +51,30 @@ function DatingPeriod() {
   const {datingPeriod, setDatingPeriod} = useContext(ListContext);
   const [inputDatingPeriod, setInputDatingPeriod] = useState('');
     return (
-        <Autocomplete
-          disablePortal
-          value={datingPeriod}
-          onChange={(event, newValue) => {
-            setDatingPeriod(newValue);
-          }}
-          
-          inputValue={inputDatingPeriod}
-          onInputChange={(event, newInputValue) => {
-            setInputDatingPeriod(newInputValue);
-          }}
-          id="artist"
-          options={DatingPeriodList}
-          variant="outlined"
-          sx={{
-            width: "30%",
-            bgcolor: "background.gray",
-            color: "primary.main",
-            borderColor: "primary.outlinedColor",
-            outlinedBorder: "border.white",
-          }}
-          size="small"
-          renderInput={(params) => <TextField {...params} label="Période" />}
-        />
-      );
+      <Autocomplete
+        disablePortal
+        value={datingPeriod}
+        onChange={(event, newValue) => {
+          setDatingPeriod(newValue);
+        }}
+        inputValue={inputDatingPeriod}
+        onInputChange={(event, newInputValue) => {
+          setInputDatingPeriod(newInputValue);
+        }}
+        id="artist"
+        options={DatingPeriodList}
+        variant="outlined"
+        sx={{
+          width: "30%",
+          backgroundColor: "searhSelect.main",
+          color: "primary.main",
+          borderColor: "primary.outlinedColor",
+          outlinedBorder: "border.white",
+        }}
+        size="small"
+        renderInput={(params) => <TextField {...params} label="Période" />}
+      />
+    );
 }
 
 export default  DatingPeriod;

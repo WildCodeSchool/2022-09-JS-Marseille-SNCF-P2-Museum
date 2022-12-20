@@ -1,6 +1,5 @@
-
 .gallery-body {
-  padding-top: 30px;
+  padding: 50px 20px 0;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -18,7 +17,6 @@
   flex-direction: row;
 }
 
-
 img.gallery-card-image{
   width: 100%;
   
@@ -32,8 +30,6 @@ img.gallery-card-image{
   color:#060403;
   align-items:center;
 }
-
-
 
 .GalleryButton{
   display: flex;

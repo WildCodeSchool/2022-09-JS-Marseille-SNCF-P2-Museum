@@ -7,6 +7,7 @@ import ListContext from "./contexts/ListContext";
 import IsSelectedContext from "./contexts/IsSelectedContext";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 
 const theme = createTheme({
   breakpoints: {
@@ -27,14 +28,34 @@ const theme = createTheme({
       main: "#E8DBCB",
       contrastText: "#000",
     },
+    backgroundGallery: {
+      main: "#E8DBCB",
+    },
     footerBG: {
       main: "#060403",
+      contrastText: "#fff",
+    },
+    searhSelect: {
+      main: "#e8dbcb00",
+      contrastText: "#fff",
+    },
+    myFavoriteSelect: {
+      main: "#e8dbcb00",
       contrastText: "#fff",
     },
   },
   typography: {
     subtitle1: {
       fontSize: 12,
+      color: "#AE8E5F",
+    },
+    galeryH2: {
+      fontSize: 40,
+      color: "#060403",
+    },
+    subtitle2: {
+      fontSize: 18,
+      color: "#060403",
     },
     body1: {
       fontWeight: 500,
@@ -51,6 +72,9 @@ const theme = createTheme({
       fontSize: 20,
       fontWeight: 500,
       color: "#FFF",
+    },
+    footerBG: {
+      color: "#E8DBCB",
     },
   },
 });
@@ -81,16 +105,17 @@ function App() {
           </ThemeProvider>
         </IsSelectedContext.Provider>
       </ListContext.Provider>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} pb={2}>
         <Stack
           direction="row"
           justifyContent="center"
           alignItems="flex-start"
           spacing={2}
-          variant="footerBG"
-          bcolor="footerBG"
+          sx={{ backgroundColor: "footerBG.main" }}
         >
-          <Footer />
+          <Typography variant="footerBG" gutterBottom>
+            <Footer />
+          </Typography>
         </Stack>
       </ThemeProvider>
     </div>

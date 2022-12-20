@@ -1,7 +1,7 @@
 import React from 'react';
-import TypeFilter from './filter/Type';
-import Artist from './filter/Artist';
-import DatingPeriod from './filter/DatingPeriod';
+import TypeFilter from './Type';
+import Artist from './Artist';
+import DatingPeriod from './DatingPeriod';
 
 function Filter() {
     
