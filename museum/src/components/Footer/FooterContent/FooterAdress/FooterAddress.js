@@ -18,8 +18,8 @@ const FooterAddress = () => {
       <Grid container>
         <Grid item xs={6} sm={12}>
           <h3>Coordonnées</h3>
-          <p>Museumstraat 1,</p>
-          <p>Amsterdam</p>
+          <p>Museumstraat 1, Amsterdam</p>
+          
         </Grid>
         <Grid item xs={6} sm={12}>
           <h3>Horaires des visites:</h3>
