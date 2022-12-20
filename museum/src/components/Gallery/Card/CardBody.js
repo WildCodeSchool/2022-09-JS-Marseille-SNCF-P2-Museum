@@ -15,6 +15,9 @@ const CardBody = (props) => {
       <Card
         sx={{ maxWidth: { xs: "100%", sm: "50%", md: "33%", lg: "25%" } }}
         elevation={4}
+        sx={{
+          backgroundColor: "bgCard.main",
+        }}
       >
         <CardImage
           image={props.image}
