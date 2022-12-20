@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Fab from "@mui/material/Fab";
 
 const GalleryFooter = () => {
 const [backToTop, setBackToTop]=useState(false);
@@ -21,7 +22,7 @@ behavior:"auto",
 })
 } 
     return <div className= "top">
-   {backToTop && (
+  {/* {backToTop && (
     <button style={{
         position:"fixed",
         bottom:"40px",
@@ -34,10 +35,17 @@ behavior:"auto",
     }}
     onClick={scrollUp}>
     ^</button>
-   
-   )}
-   </div>
+  
 
+   )}*/}
+    <Fab color="primary" aria-label="add"
+    position= 'absolute'>
+  
+    
+     <ArrowUpwardIcon onClick={scrollUp} />
+
+     </Fab>
+   </div>
  };
         
 
