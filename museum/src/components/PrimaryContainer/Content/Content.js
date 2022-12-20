@@ -152,7 +152,7 @@ function Content(props) {
               }}
               startIcon={<NavigateNextIcon />}
             >
-              Next
+              Suivant
             </Button>
 
             <Button
@@ -163,7 +163,7 @@ function Content(props) {
                 setIsFavorite(!isFavorite);
               }}
             >
-              Favorite
+              Favori
             </Button>
 
             <Button

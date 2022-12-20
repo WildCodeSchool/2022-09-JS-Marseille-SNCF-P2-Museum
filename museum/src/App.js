@@ -31,6 +31,10 @@ const theme = createTheme({
     backgroundGallery: {
       main: "#E8DBCB",
     },
+    bgCard: {
+      main: "#FDFDFB",
+      contrastText: "#fff",
+    },
     footerBG: {
       main: "#060403",
       contrastText: "#fff",
