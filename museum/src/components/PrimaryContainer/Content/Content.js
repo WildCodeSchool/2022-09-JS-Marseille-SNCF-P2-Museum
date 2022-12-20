@@ -140,21 +140,7 @@ function Content(props) {
             description={workOfArt.artObject?.label.description}
             objectCollection={workOfArt.artObject?.objectCollection}
           />
-          <Stack
-            direction={"row"}
-            spacing={2}
-          >
-            <Button
-              variant="contained"
-              onClick={() => {
-                setIsLoading(true);
-                getTinderArt();
-              }}
-              startIcon={<NavigateNextIcon />}
-            >
-              Suivant
-            </Button>
-
+          <Stack direction={"row"} spacing={2}>
             <Button
               variant="contained"
               selected={isFavorite}
@@ -164,6 +150,16 @@ function Content(props) {
               }}
             >
               Favori
+            </Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                setIsLoading(true);
+                getTinderArt();
+              }}
+              startIcon={<NavigateNextIcon />}
+            >
+              Suivant
             </Button>
 
             <Button
@@ -179,7 +175,7 @@ function Content(props) {
           </Stack>
         </Stack>
       </Stack>
-      <SearchBar  />
+      <SearchBar />
     </>
   );
 }

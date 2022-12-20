@@ -80,6 +80,10 @@ const theme = createTheme({
     footerBG: {
       color: "#E8DBCB",
     },
+    titleDrawer: {
+      color: "#060403",
+      fontWeight:"700",
+    },
   },
 });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Filter from "./filter/Filter";
+import Filter from "./Filter/Filter";
 import "./SearchBar.css";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
