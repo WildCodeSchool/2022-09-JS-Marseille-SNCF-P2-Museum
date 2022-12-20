@@ -37,7 +37,7 @@ export default function FooterModalMap() {
           position: "relative",
           bottom: 200,
           left: "25%",
-          zIndex: 0,
+          zIndex: 'button',
         }}
       >
         NOUS TROUVER

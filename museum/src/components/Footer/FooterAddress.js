@@ -1,8 +1,9 @@
 import React from "react";
 
+
 const FooterAddress = () => {
   return (
-    <div className="footerAddress">
+    <div>
       <h3>Coordonnées</h3>
       <p>Museumstraat 1,</p>
       <p>Amsterdam</p>

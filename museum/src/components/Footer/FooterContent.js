@@ -10,21 +10,23 @@ import Divider from "@mui/material/Divider";
 const FooterContent = () => {
   return (
     <Stack
-      direction={{ xs: "column", sm: "column", md: "row" }}
+      direction={{md: "row" }}
       spacing={{ xs: 1, sm: 2, md: 3 }}
       justifyContent={{ xs: "center", sm: "space-around" }}
       alignItems={{ xs: "center", sm: "center", md: "start" }}
-      
+      textAlign={{ xs: "center", sm: "center", md: "start" }}
     >
       <FooterLogo />
       <Divider orientation="vertical" />
       <FooterAbout />
-      <Divider orientation="vertical" flexItem />
+      <Divider orientation="vertical" />
       <FooterAddress />
-      <Divider orientation="vertical" flexItem />
+      <Divider orientation="vertical" />
       <FooterMap />
     </Stack>
   );
 };
 
 export default FooterContent;
+
+// les Divider n'apparaissent pas !!

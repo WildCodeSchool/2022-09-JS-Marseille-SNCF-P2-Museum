@@ -33,7 +33,7 @@
 }
 
 .footerLogo img {
-  width: 60%;
+  width: 50%;
  /* padding-top: 10px;*/
 }
 
@@ -80,16 +80,16 @@
   height: 33rem;
 }
 
-.footerLegacy {
+/*.footerLegacy {
   /*display: flex;
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
   font-size:12px;
-  width: 100%;*/
+  width: 100%;
   border-top: #E8DBCB 1px solid;
   padding-top: 10px;
-}
+}*/
 
 /*.footerLegacy img {
   width: 50px;
