@@ -10,13 +10,10 @@ import { TransitionProps } from "@mui/material/transitions";
 import { Image } from "mui-image";
 import Artist from "../../PrimaryContainer/Content/SearchBar/filter/Artist";
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement,
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return (
+    <Slide direction="up" ref={ref} {...props} />
+  );
 });
 
 const CardImage = ({ image, imagePopup, title, artist }) => {

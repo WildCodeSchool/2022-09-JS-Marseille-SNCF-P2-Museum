@@ -1,13 +1,16 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
-import Box from "@mui/material/Box";
+import { ListItemText } from '@mui/material';
 
 const SelectedCardTitle = ({title, artist}) => {
     return (
-      <Box>
-        <Typography>{title}</Typography>
-        <Typography variant="subtitle1">{artist}</Typography>
-      </Box>
+      <ListItemText
+        primary={artist}
+        secondary={
+          <React.Fragment>
+           {title}
+          </React.Fragment>
+        }  
+      />
     );
 };
 

@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 import IsSelectedContext from '../../../../contexts/IsSelectedContext'
-import Masonry from "@mui/lab/Masonry";
 import SelectedCardBody from "./SelectedCards/SelectedCardBody"
 
 function NavButton() {
@@ -29,10 +28,10 @@ function NavButton() {
         onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <ListItemText style={{ textDecoration: "none" }} to="/">
-                    Your favorites Work of Art:
+                <ListItemText style={{ textDecoration: "none" }} to="/" ml={2}>
+                    Vos oeuvres d'art favorites:
                 </ListItemText>
-                <Masonry columns={{ xs: 1, sm: 2, md:3,lg:4 }} spacing={4}>
+                <List sx={{ width: '100%', maxWidth: 500, bgcolor: 'background.paper' }}>
                     {isSelected.map((item, index) => (
                         <SelectedCardBody
                             key={index}
@@ -42,13 +41,13 @@ function NavButton() {
                             artist={item?.principalOrFirstMaker}
                         />
                     ))}
-                </Masonry>
+                </List>
             </List>
         </Box>
     );
     return(
         <div>
-            {['My Favorites'].map((anchor) => (
+            {['Mes Favoris'].map((anchor) => (
                 <React.Fragment key={anchor}>
                 <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
                 <Drawer
