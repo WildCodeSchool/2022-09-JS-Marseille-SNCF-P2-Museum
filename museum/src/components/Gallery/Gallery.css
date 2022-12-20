@@ -41,3 +41,13 @@ img.gallery-card-image{
   margin-bottom: 20px;
   margin-top: 20px ;
 }
+.top{
+  display:flex;
+  justify-content: right;
+   right: 20px;
+   position: fixed;
+   left: 0;
+   bottom: 7px;
+ 
+  
+}
