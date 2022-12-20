@@ -9,20 +9,10 @@
 
 .content-container {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 50px 0;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  width: 100%;
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
+  
 }
 
-.content-container .wrap {
+.content-containerwrap {
   width: var(--wrap);
   display: flex;
   align-items: center;

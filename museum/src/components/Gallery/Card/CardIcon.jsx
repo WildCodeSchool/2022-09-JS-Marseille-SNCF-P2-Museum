@@ -19,6 +19,7 @@ const CardIcon = (props) => {
         onClick={() => {
           setSelected(!selected);
         }}
+        color="primary"
       >
         {iconButton}
       </IconButton>

@@ -8,7 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { Image } from "mui-image";
-import Artist from "../../PrimaryContainer/Content/SearchBar/filter/Artist";
+import Artist from "../../PrimaryContainer/Content/SearchBar/Filter/Artist";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
