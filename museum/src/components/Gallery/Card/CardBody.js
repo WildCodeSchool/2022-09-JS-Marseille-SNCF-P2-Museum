@@ -3,24 +3,32 @@ import CardImage from "./CardImage";
 import CardTitle from "./CardTitle";
 import CardIcon from "./CardIcon";
 import "../Gallery.css";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import { Stack } from "@mui/system";
 
 
 const CardBody = (props) => {
   return (
-    <div className="gallery-card-body">
+    <Card sx={{ maxWidth: 345 }} elevation={8} >
       <CardImage
         image={props.image}
         imagePopup={props.imagePopup}
         title={props.title}
+        artist={props.artist}
       />
-
-      <div className="gallery-card-footer">
-        <CardTitle title={props.title}
-        artist={props.artist} />
-
-        <CardIcon selected={"setSelected"} />
-      </div>
-    </div>
+      <CardContent>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="flex-start"
+          spacing={2}
+        >
+          <CardTitle title={props.title} artist={props.artist} />
+          <CardIcon selected={"setSelected"} />
+        </Stack>
+      </CardContent>
+    </Card>
   );
 };
 export default CardBody;
