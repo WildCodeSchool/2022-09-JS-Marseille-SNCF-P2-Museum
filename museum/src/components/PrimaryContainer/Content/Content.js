@@ -15,78 +15,79 @@ import IsSelectedContext from "../../../contexts/IsSelectedContext";
 
 function Content(props) {
   const { workOfArt, setWorkOfArt } = props;
+  const { isSelected, setIsSelected } = useContext(IsSelectedContext);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [count, setCount] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const getTinderArt = () => {
-    axios
-      //ATTENTION BIENTOT FILTRE
-      .get(
+  function displayIcon() {
+    return isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />;
+  }
+
+  const getTinderArt = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.get(
         `https://www.rijksmuseum.nl/api/en/collection?key=DIccpaSN&p=1&ps=100&type=painting`
-      )
-      // Extract the DATA from the received response
-      .then((response) => response.data)
-      // Use this data to update the state
-      .then((data) => {
+      );
+      const data = response.data;
 
-        //on random un nombre sur la totalité de la base de 100
-        let randomNbr = Math.floor(Math.random() * data.artObjects.length);
-        
-        //On sort l'ID du tableau random
-        let winID = data.artObjects[randomNbr].objectNumber;
+      //on random un nombre sur la totalité de la base de 100
+      let randomNbr = Math.floor(Math.random() * data.artObjects.length);
 
-        axios
-          .get(
-            `https://www.rijksmuseum.nl/api/en/collection/${winID}?key=DIccpaSN`
-          )
-          // Extract the DATA from the received response
-          .then((response) => response.data)
+      //On sort l'ID du tableau random
+      let winID = data.artObjects[randomNbr].objectNumber;
 
-          // Use this data to update the state
-          .then((data) => {
-            setWorkOfArt(data);
-
-            const bg = (document.getElementsByClassName(
-              "PrimaryContainer"
-            )[0].style.backgroundImage = `"url('${workOfArt.artObject?.webImage.url.replace(
-              "s0",
-              "w1200"
-            )}')"`);
-          });
-      });
+      const response2 = await axios.get(
+        `https://www.rijksmuseum.nl/api/en/collection/${winID}?key=DIccpaSN`
+      );
+      const data2 = response2.data;
+      setWorkOfArt(data2);
+      console.log("data2", data2);
+      if (!isSelected.includes(data2.artObject)) {
+        setIsFavorite(false);
+        console.log("gettinder isfavorite", isFavorite);
+        displayIcon(!isFavorite);
+      }
+      setIsLoading(false);
+      const bg = (document.getElementsByClassName(
+        "PrimaryContainer"
+      )[0].style.backgroundImage = `"url('${workOfArt.artObject?.webImage.url.replace(
+        "s0",
+        "w1200"
+      )}')"`);
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  useEffect(() => {
+    console.log("début useEffect is loading", isLoading);
+    if (isLoading) return;
+    console.log("début useEffect isFavorite selected", isSelected);
+    console.log("début useEffect isFavorite isFavorite", isFavorite);
+    console.log(
+      "début useEffect isFavorite workOfArt",
+      workOfArt.artObject?.title
+    );
+    if (isFavorite === true && !isSelected.includes(workOfArt.artObject)) {
+      setIsSelected([...isSelected, workOfArt.artObject]);
+    } else if (
+      isFavorite == false &&
+      isSelected.includes(workOfArt.artObject)
+    ) {
+      let index = isSelected.indexOf(workOfArt.artObject);
+      console.log("index", index);
+      isSelected.splice(index, 1);
+    }
+  }, [isFavorite]);
+  console.log(" fin use effect isFavorite selected", isSelected);
 
   //slider !
   // 1 - losque je clique le bouton play, un compteur se lance
   // 2 - si je reclique le bouton play il stoppe le compteur
   // 3 - lorsque le compteur arrive à 4 secondes, la fonction getTinderArt est lancé pour changer le tableau
-  const {isSelected, setIsSelected} = useContext(IsSelectedContext);
-  //const myFavorites = !isSelected.includes(workOfArt.artObject);
-  const [count, setCount] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
-  const [isNext, setIsNext] = useState();
-  console.log("myFaisSelectedvorites", isSelected );
-
-  useEffect(() => {
-    setIsFavorite(false);
-    if (isNext) {
-      getTinderArt();
-      console.log("workofart",workOfArt.artObject)
-    }    
-  }, [isNext]);
-
- useEffect(() => {
-    console.log("1 useEffect", isSelected)
-    if (isFavorite === true && !isSelected.includes(workOfArt.artObject)) {
-      setIsSelected([...isSelected, workOfArt.artObject])
-    } /*else {let index = isSelected.indexOf(workOfArt.artObject);
-    console.log("index", index);
-    isSelected.splice(index,1);} ;*/
-  }
-  , [isFavorite]);
-  //si je clique sur favorite j'ajoute au tableau isSelected le tableau
-  //si je clique a nouveau sur le favorite, on l'enleve du isSelected
-  //si j'appuie sur next je conseve le tableau
-  console.log("selected", isSelected);
 
   useEffect(() => {
     if (isRunning) {
@@ -106,63 +107,78 @@ function Content(props) {
     }
   }, [count, isRunning]);
 
- 
   return (
     <>
-      <div className="content-container">
-        <div className="wrap">
-          <FeatureImage
-            image={workOfArt.artObject?.webImage.url.replace("s0", "w600-h350")}
-            imagePopup={workOfArt.artObject?.webImage.url.replace(
-              "s0",
-              "w2000"
-            )}
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        justifyContent="center"
+        alignItems="flex-start"
+        spacing={2}
+        pt={2}
+        pb={4}
+        pl={3}
+        pr={3}
+        className={"content-container"}
+      >
+        <FeatureImage
+          image={workOfArt.artObject?.webImage.url.replace("s0", "w600-h350")}
+          imagePopup={workOfArt.artObject?.webImage.url.replace("s0", "w2000")}
+          title={workOfArt.artObject?.title}
+          artist={workOfArt.artObject?.label.makerLine}
+          width={{ sm: "100%", md: "50%" }}
+        />
+        <Stack
+          direction="column"
+          justifyContent="center"
+          alignItems="flex-start"
+          spacing={2}
+          width={{ sm: "100%", md: "50%" }}
+        >
+          <Article
             title={workOfArt.artObject?.title}
             artist={workOfArt.artObject?.label.makerLine}
+            description={workOfArt.artObject?.label.description}
+            objectCollection={workOfArt.artObject?.objectCollection}
           />
-          <div className="content-article-container">
-            <Article
-              title={workOfArt.artObject?.title}
-              artist={workOfArt.artObject?.label.makerLine}
-              description={workOfArt.artObject?.label.description}
-              objectCollection={workOfArt.artObject?.objectCollection}
-            />
-            <Stack direction="row" spacing={2}>
-              <Button
-                variant="contained"
-                onClick={setIsNext}
-                startIcon={<NavigateNextIcon />}
-              >
-                Next
-              </Button>
+          <Stack
+            direction={"row"}
+            spacing={2}
+          >
+            <Button
+              variant="contained"
+              onClick={() => {
+                setIsLoading(true);
+                getTinderArt();
+              }}
+              startIcon={<NavigateNextIcon />}
+            >
+              Next
+            </Button>
 
-              <Button
-                variant="contained"
-                selected={isFavorite}
-                startIcon={
-                  isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />
-                }
-                onClick={() => {
-                  setIsFavorite(!isFavorite);
-                }}
-              >
-                Favorite
-              </Button>
+            <Button
+              variant="contained"
+              selected={isFavorite}
+              startIcon={displayIcon()}
+              onClick={() => {
+                setIsFavorite(!isFavorite);
+              }}
+            >
+              Favorite
+            </Button>
 
-              <Button
-                variant="contained"
-                selected={isRunning}
-                startIcon={isRunning ? <PauseIcon /> : <PlayArrowIcon />}
-                onClick={() => {
-                  setIsRunning(!isRunning);
-                }}
-              >
-                {isRunning ? "Stop" : "Play"}
-              </Button>
-            </Stack>
-          </div>
-        </div>
-      </div>
+            <Button
+              variant="contained"
+              selected={isRunning}
+              startIcon={isRunning ? <PauseIcon /> : <PlayArrowIcon />}
+              onClick={() => {
+                setIsRunning(!isRunning);
+              }}
+            >
+              {isRunning ? "Stop" : "Play"}
+            </Button>
+          </Stack>
+        </Stack>
+      </Stack>
       <SearchBar />
     </>
   );

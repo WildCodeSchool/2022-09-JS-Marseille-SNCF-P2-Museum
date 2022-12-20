@@ -54,9 +54,8 @@ const Gallery = () => {
 
   return (
     <div className="gallery-body">
-      
-       
-          <Masonry columns={{ xs: 1, sm: 2, md:3,lg:4 }} spacing={4}>
+
+          <Masonry columns={{ xs: 1, sm: 2, md:3,lg:4 }} spacing={4} >
             {paintsItems.map((item, index) => (
               <CardBody
                 image={item?.webImage.url.replace("s0", "w310")}
