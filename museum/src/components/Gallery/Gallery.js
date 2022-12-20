@@ -54,12 +54,10 @@ const Gallery = () => {
 
   return (
     <div className="gallery-body">
-      
-       
           <Masonry columns={{ xs: 1, sm: 2, md:3,lg:4 }} spacing={4}>
             {paintsItems.map((item, index) => (
               <CardBody
-                image={item?.webImage.url.replace("s0", "w310")}
+                image={item?.webImage.url.replace("s0", "w320")}
                 imagePopup={item?.webImage.url.replace("s0", "w3000")}
                 title={item.title}
                 artist={item.principalOrFirstMaker}
@@ -72,8 +70,6 @@ const Gallery = () => {
           setPage={setPage}
           paintsItems={paintsItems}
         />
-      
-
       <GalleryFooter />
     </div>
   );

@@ -6,16 +6,12 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
+import CardMedia from "@mui/material/CardMedia";
 import { TransitionProps } from "@mui/material/transitions";
 import { Image } from "mui-image";
-import Artist from "../../PrimaryContainer/Content/SearchBar/filter/Artist";
+import Artist from "../../PrimaryContainer/Content/SearchBar/Filter/Artist";
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement,
-  },
-  ref: React.Ref<unknown>
-) {
+const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
@@ -30,8 +26,9 @@ const CardImage = ({ image, imagePopup, title, artist }) => {
     setOpen(false);
   };
   return (
-    <div>
-      <Image
+    <>
+      <CardMedia
+        component="img"
         src={image}
         alt=""
         style={{ animation: `fadeIn 1s` }}
@@ -61,7 +58,7 @@ const CardImage = ({ image, imagePopup, title, artist }) => {
         </AppBar>
         <img src={imagePopup} alt="" style={{ animation: `fadeIn 1s` }}></img>
       </Dialog>
-    </div>
+    </>
   );
 };
 

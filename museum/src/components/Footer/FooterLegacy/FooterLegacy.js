@@ -1,8 +1,6 @@
 import React from "react";
 import { Stack } from "@mui/system";
 
-import "./Footer.css";
-
 
 const FooterLegacy = () => {
 

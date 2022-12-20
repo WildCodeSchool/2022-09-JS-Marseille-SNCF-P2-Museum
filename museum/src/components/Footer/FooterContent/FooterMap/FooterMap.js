@@ -1,13 +1,14 @@
 import React from "react";
 import FooterMapButton from "./FooterMapButton";
+import { Image } from "mui-image";
 
 
 const FooterMap = () => {
   return (
-    <div className="footerMap">
-      <img src="./plan-google.png" alt="plan gris" />
+    <>
+      <Image src="./plan-google.png" alt="plan gris" />
       <FooterMapButton />
-    </div>
+    </>
   );
 };
 
