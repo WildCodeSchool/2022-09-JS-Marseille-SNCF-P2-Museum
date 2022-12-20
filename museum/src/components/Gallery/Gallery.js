@@ -16,6 +16,7 @@ const Gallery = () => {
   const { type, setType } = useContext(ListContext);
   const { datingPeriod, setDatingPeriod } = useContext(ListContext);
   const { artist, setArtist } = useContext(ListContext);
+  
 
   //getItems fait la requete API
   const getItems = () => {
@@ -55,27 +56,24 @@ const Gallery = () => {
 
   return (
     <div className="gallery-body">
-      
-       
-          <Masonry columns={{ xs: 1, sm: 2, md:3,lg:4 }} spacing={4}>
-            {paintsItems.map((item, index) => (
-              <CardBody
-                key={index}
-                image={item?.webImage.url.replace("s0", "w310")}
-                imagePopup={item?.webImage.url.replace("s0", "w3000")}
-                title={item.title}
-                artist={item.principalOrFirstMaker}
-              />
-            ))}
-          </Masonry>
-       
-        <GalleryButton
-          page={page}
-          setPage={setPage}
-          paintsItems={paintsItems}
-        />
-      
-
+      <Masonry columns={{ xs: 1, sm: 2, md:3,lg:4 }} spacing={4}>
+        {paintsItems.map((item, index) => (
+          <CardBody
+            key={index+item.id}
+            image={item?.webImage.url.replace("s0", "w310")}
+            imagePopup={item?.webImage.url.replace("s0", "w3000")}
+            title={item.title}
+            artist={item.principalOrFirstMaker}
+            /*selected={selected}*/
+            item={item}
+          />
+        ))}
+      </Masonry>
+      <GalleryButton
+        page={page}
+        setPage={setPage}
+        paintsItems={paintsItems}
+      />
       <GalleryFooter />
     </div>
   );

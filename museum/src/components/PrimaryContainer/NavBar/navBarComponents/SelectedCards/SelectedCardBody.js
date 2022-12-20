@@ -12,8 +12,6 @@ const SelectedCardBody = (props) => {
       <SelectedCardImage
         image={props.image}
         imagePopup={props.imagePopup}
-        title={props.title}
-        artist={props.artist}
       />
       <CardContent>
         <Stack

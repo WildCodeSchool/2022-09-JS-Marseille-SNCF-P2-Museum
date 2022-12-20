@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useContext } from "react";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import IsSelectedContext from '../../../../contexts/IsSelectedContext'
 import Masonry from "@mui/lab/Masonry";
@@ -39,8 +38,8 @@ function NavButton() {
                             key={index}
                             image={item?.webImage.url.replace("s0", "w310")}
                             imagePopup={item?.webImage.url.replace("s0", "w3000")}
-                            title={item.title}
-                            artist={item.principalOrFirstMaker}
+                            title={item?.title}
+                            artist={item?.principalOrFirstMaker}
                         />
                     ))}
                 </Masonry>
