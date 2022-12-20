@@ -8,14 +8,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Stack } from "@mui/system";
 
-
 const CardBody = (props) => {
   return (
     <>
       <Card
-        sx={{ maxWidth: { xs: "100%", sm: "50%", md: "33%", lg: "25%" } }}
         elevation={4}
         sx={{
+          maxWidth: { xs: "100%", sm: "50%", md: "33%", lg: "25%" },
           backgroundColor: "bgCard.main",
         }}
       >
