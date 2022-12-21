@@ -5,7 +5,7 @@ import GalleryFooter from "./Galleryscroll";
 import axios from "axios";
 import Masonry from "@mui/lab/Masonry";
 import ListContext from "../../contexts/ListContext";
-//import "./Gallery.css";//
+
 
 const Gallery = () => {
   //paintsItems permet de remplir la gallerie avec des oeuvres
@@ -46,7 +46,7 @@ const Gallery = () => {
       .then(({ data: { artObjects } }) => {
         setPaintsItems(artObjects);
       });
-      console.log(paintsItems)
+     
   };
 
   //au changement de page et/ou type.label et/ou artist?.label et/ou datingPeriod?.id, relance la requete à l'API (via getItems)
