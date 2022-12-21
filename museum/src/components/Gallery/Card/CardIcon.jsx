@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import IconButton from "@mui/material/IconButton";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import IsSelectedContext from "../../../contexts/IsSelectedContext"
 
 
 const CardIcon = (props) => {
  
-      const [isFavorite, setIsFavorite] = useState(props.isFavorite)
+  const {selected, setSelected} = props;
+  const iconButton = selected ? <FavoriteIcon /> : <FavoriteBorderIcon />;
+     
       
-      function handleClickFavorite() {
-        console.log('click');
-         setIsFavorite(!isFavorite);
-         console.log(isFavorite);
-      }
-      
-    return (
-       
-         <div id="icon-gallery"className={isFavorite ? 'isFavorite' : 'notFavorite'}
-          onClick={handleClickFavorite}>
-          </div>
-              
-        
-    );
+  return (
+    <IconButton
+      value="check"
+      selected={selected}
+      onClick={() => {
+        setSelected(!selected);
+      }}
+      color="primary"
+    >
+      {iconButton}
+    </IconButton>
+  );
 };
 
-export default CardIcon ;
+export default CardIcon;

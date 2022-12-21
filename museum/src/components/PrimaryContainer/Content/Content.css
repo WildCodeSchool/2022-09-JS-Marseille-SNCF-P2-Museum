@@ -9,24 +9,14 @@
 
 .content-container {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 50px 0;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  width: 100%;
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
+  
 }
 
-.content-container .wrap {
+.content-containerwrap {
   width: var(--wrap);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 2%;
   flex-wrap: wrap;
   flex-direction: row;
@@ -36,9 +26,11 @@
   border-radius: 3px;
   animation: fadeIn 1s;
   cursor: zoom-in;
-  transition: transform .5s; /* Animation */
+  transition: transform 0.5s; /* Animation */
 }
 
 .content-container img:hover {
- transform: scale(1.01); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(
+    1.01
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

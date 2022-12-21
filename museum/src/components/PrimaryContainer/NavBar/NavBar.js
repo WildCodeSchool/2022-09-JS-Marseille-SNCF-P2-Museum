@@ -1,18 +1,29 @@
 import React from "react";
 import "./NavBar.css";
-import Filter from "./Filter";
-import NavButton from "./NavButton";
-import Logo from "./Logo";
+import NavButton from "./navBarComponents/NavButton";
+import NavTitle from "./navBarComponents/NavTitle";
+import Logo from "./navBarComponents/Logo";
+import Stack from "@mui/material/Stack";
 
 function NavBar() {
   return (
-    <div className="NavBar">
-      <div className="wrap">
-        <Logo/>
-        <Filter />
+    <Stack direction="row" spacing={2} className={"NavBar"}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        spacing={2}
+        className={"NavBarwrap"}
+        pt={3}
+        pb={3}
+        pl={2}
+        pr={2}
+      >
+        <Logo />
+        <NavTitle sx={{ display: { xs: "none", sm: "block" } }} />
         <NavButton />
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 }
 

@@ -1,6 +1,5 @@
-
 .gallery-body {
-  padding-top: 30px;
+  padding: 50px 20px 0;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -18,21 +17,6 @@
   flex-direction: row;
 }
 
-.gallery-card-body {
-  width: 32%;
-  position: relative;
-  margin-bottom: 2%;
-  border-radius: 3px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 16px 0 rgba(108, 108, 108, 0.2);
-  color: #FDFDFB;
-  box-sizing: border-box;
-}
-
-.gallery-card-body:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
 img.gallery-card-image{
   width: 100%;
   
@@ -47,47 +31,19 @@ img.gallery-card-image{
   align-items:center;
 }
 
-p.gallery-card-title{
-  margin: 0 0 16px;
-  font-size: 1rem;
-}
-
-.isFavorite {
-  width: 20px;
-  height: 20px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
-  background-size: 100%;
-}
-
-.notFavorite {
-  width: 20px;
-  height: 20px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
- 
-}
-
-
-  /* .button{ */
-    /* font:inherit ; */
-    /* font-size:2rem ; */
-    /* background-color: grey; */
-    /* padding: 1rem 4rem; */
-    /* border: 1px solid white; */
-    /* color: rgb(230, 227, 227); */
-    /* border-radius: 10px; */
-    /* cursor:pointer; */
-    /* margin-top: 10px; */
-  /* } */
-  
-  /* .button:hover{ */
-    /* background-color: rgb(207, 198, 198); */
-    /* border-color:black ; */
-    /* color:black; */
-    /* border-radius: 10px; */
-  /* } */
 .GalleryButton{
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
   margin-top: 20px ;
+}
+.top{
+  display:flex;
+  justify-content: right;
+   right: 20px;
+   position: fixed;
+   left: 0;
+   bottom: 7px;
+ 
+  
 }
