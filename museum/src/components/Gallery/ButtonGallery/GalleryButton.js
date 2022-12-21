@@ -4,16 +4,15 @@ import Pagination from "@mui/material/Pagination";
 import axios from "axios";
 
 function GalleryButton(props) {
-   //const { page, setPage } = (props);
    const page = props.page;
    const setPage = props.setPage;
 
    //creation du state totalNumber pour actualiser la pagination
    const [totalNumber, setTotalNumber] = useState([])
    //import de type, datingPeriod et artist depuis le contexte pour actualiser la pagination
-   const {type, setType} = useContext(ListContext);
-   const {datingPeriod, setDatingPeriod} = useContext(ListContext);
-   const {artist, setArtist} = useContext(ListContext);
+   const {type} = useContext(ListContext);
+   const {datingPeriod} = useContext(ListContext);
+   const {artist} = useContext(ListContext);
 
   //getItems fait la requete API
   const getItems = () => {
@@ -21,17 +20,17 @@ function GalleryButton(props) {
     let myStr = "";
     
     let myTypeStr= `&type=${type?.label}`;
-    if(type?.label != undefined ){
+    if(type?.label !== undefined ){
       myStr += myTypeStr; 
     }
 
     let myArtistStr=`&involvedMaker=${artist?.label}`;
-    if(artist?.label != undefined ){
+    if(artist?.label !== undefined ){
       myStr += myArtistStr; 
     }
 
     let myPeriodStr= `&f.dating.period=${datingPeriod?.id}`;
-    if(datingPeriod?.id != undefined ){
+    if(datingPeriod?.id !== undefined ){
       myStr += myPeriodStr; 
     }
     
@@ -66,7 +65,6 @@ function GalleryButton(props) {
             /*count = nombre total d'éléments à paginer en divisant le nombre total d éléments par 9(nombre d oeuvres par page) et en arrondissant le résultat à l entier supérieur.*/
             count={Math.ceil(totalNumber.length /9)}
             color="primary" 
-           
             value={page} 
             onChange={handleChangePage}>
          </Pagination>

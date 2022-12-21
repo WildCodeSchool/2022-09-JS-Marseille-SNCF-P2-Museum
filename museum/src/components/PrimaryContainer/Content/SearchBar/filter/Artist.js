@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import ListContext from "../../../../../contexts/ListContext";
@@ -89,7 +89,7 @@ const artistList = [
 ];
 
 function Artist() {
-  const { artist, setArtist } = useContext(ListContext);
+  const { setArtist } = useContext(ListContext);
   const [inputArtist, setInputArtist] = useState("");
   return (
     <Autocomplete

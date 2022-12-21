@@ -3,14 +3,13 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
 import IsSelectedContext from '../../../../contexts/IsSelectedContext'
 import SelectedCardBody from "./SelectedCards/SelectedCardBody"
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Typography from "@mui/material/Typography";
 
 function NavButton() {
-    const {isSelected, setIsSelected} = useContext(IsSelectedContext);    
+    const {isSelected} = useContext(IsSelectedContext);    
     const [state, setState] = React.useState({
           right: false,
         });
