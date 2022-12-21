@@ -44,10 +44,8 @@ function Content(props) {
       );
       const data2 = response2.data;
       setWorkOfArt(data2);
-      console.log("data2", data2);
       if (!isSelected.includes(data2.artObject)) {
         setIsFavorite(false);
-        console.log("gettinder isfavorite", isFavorite);
         displayIcon(!isFavorite);
       }
       setIsLoading(false);
@@ -58,19 +56,11 @@ function Content(props) {
         "w1200"
       )}')"`);
     } catch (error) {
-      console.error(error);
     }
   };
 
   useEffect(() => {
-    console.log("début useEffect is loading", isLoading);
     if (isLoading) return;
-    console.log("début useEffect isFavorite selected", isSelected);
-    console.log("début useEffect isFavorite isFavorite", isFavorite);
-    console.log(
-      "début useEffect isFavorite workOfArt",
-      workOfArt.artObject?.title
-    );
     if (isFavorite === true && !isSelected.includes(workOfArt.artObject)) {
       setIsSelected([...isSelected, workOfArt.artObject]);
     } else if (
@@ -78,16 +68,10 @@ function Content(props) {
       isSelected.includes(workOfArt.artObject)
     ) {
       let index = isSelected.indexOf(workOfArt.artObject);
-      console.log("index", index);
       isSelected.splice(index, 1);
     }
   }, [isFavorite]);
-  console.log(" fin use effect isFavorite selected", isSelected);
 
-  //slider !
-  // 1 - losque je clique le bouton play, un compteur se lance
-  // 2 - si je reclique le bouton play il stoppe le compteur
-  // 3 - lorsque le compteur arrive à 4 secondes, la fonction getTinderArt est lancé pour changer le tableau
 
   useEffect(() => {
     if (isRunning) {
@@ -151,6 +135,7 @@ function Content(props) {
             >
               Favori
             </Button>
+
             <Button
               variant="contained"
               onClick={() => {
@@ -181,6 +166,3 @@ function Content(props) {
 }
 
 export default Content;
-// <SearchBar />
-// BGcolor={workOfArt.artObject?.colors[0].hex}
-//workOfArt.artObject?.colors.hex

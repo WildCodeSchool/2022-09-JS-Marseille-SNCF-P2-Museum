@@ -31,11 +31,10 @@ function NavButton() {
       >
         <List>
           <Typography
-            variant="titleDrawer"
+            variant="titleDrawer, button"
             gutterBottom
             ml={2}
             mt={4}
-            variant="button"
           >
             Vos oeuvres d'art favorites
           </Typography>

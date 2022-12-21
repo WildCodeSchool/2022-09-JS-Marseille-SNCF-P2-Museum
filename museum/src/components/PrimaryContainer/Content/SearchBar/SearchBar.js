@@ -18,6 +18,7 @@ function SearchBar({ BGcolor }) {
         backgroundColor: "backgroundGallery.main",
         color: "primary.main",
       }}
+      id="startGallery"
     >
       <Typography variant="galeryH2" gutterBottom>
         Planifiez votre visite
@@ -31,8 +32,8 @@ function SearchBar({ BGcolor }) {
         }}
       >
         Filtrez les œuvres par artiste, type ou époque, et ajoutez-les à vos
-        favoris pour planifier votre visite de manière ciblée les œuvres qui
-        vous intéressent le plus.
+        favoris pour planifier votre visite de manière ciblée. Retrouvez
+        facilement les œuvres qui vous ont fait vibrer..
       </Typography>
       <Filter className="wrap" />
     </Stack>

@@ -9,7 +9,6 @@ import Slide from "@mui/material/Slide";
 import Tooltip from "@mui/material/Tooltip";
 import { Image } from "mui-image";
 
-
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });

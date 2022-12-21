@@ -7,11 +7,7 @@ import Stack from "@mui/material/Stack";
 
 function NavBar() {
   return (
-    <Stack
-      direction="row"
-      spacing={2}
-      className={"NavBar"}
-    >
+    <Stack direction="row" spacing={2} className={"NavBar"}>
       <Stack
         direction="row"
         justifyContent="space-between"
@@ -20,9 +16,11 @@ function NavBar() {
         className={"NavBarwrap"}
         pt={3}
         pb={3}
+        pl={2}
+        pr={2}
       >
         <Logo />
-        <NavTitle />
+        <NavTitle sx={{ display: { xs: "none", sm: "block" } }} />
         <NavButton />
       </Stack>
     </Stack>
