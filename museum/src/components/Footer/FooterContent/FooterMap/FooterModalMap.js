@@ -1,4 +1,3 @@
-
 import React from "react";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
@@ -6,8 +5,6 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-//import "./Footer.css";
-
 
 const style = {
   position: "absolute",
@@ -29,7 +26,7 @@ export default function FooterModalMap() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <>
       <Button
         variant="contained"
         onClick={handleOpen}
@@ -37,7 +34,7 @@ export default function FooterModalMap() {
           position: "relative",
           bottom: 200,
           left: "25%",
-          zIndex: 'button',
+          zIndex: "button",
         }}
       >
         NOUS TROUVER
@@ -65,8 +62,6 @@ export default function FooterModalMap() {
           </Box>
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 }
-
-// finaliser avec Fred

@@ -13,7 +13,7 @@ const FooterLegacy = () => {
       borderTop={1}
       paddingTop={2}
     >
-      <img src="./R.png" alt="" />
+      <img src="./R.png" alt="M entouré pointille dans carré blanc" />
       <h5>En partenariat avec Musée de France</h5>
       <h5>Mentions Legales</h5>
       <h5>Données Personnelles</h5>
@@ -23,5 +23,3 @@ const FooterLegacy = () => {
 };
 
 export default FooterLegacy;
-
-//voir l.16 pour trait horizontal 
