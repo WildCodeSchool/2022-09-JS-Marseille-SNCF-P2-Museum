@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterAbout = () => {
   return (
-    <div className="footerAbout">
+    <>
       <h3>A propos</h3>
       <p>
         Fred (dit Charlie) et ses 3 drôles de dames (Fanny, Sabine et Aline) ont
@@ -19,7 +19,7 @@ const FooterAbout = () => {
         ce que nous avons réalisé a inspiré un musée français de renommée
         mondiale.
       </p>
-    </div>
+    </>
   );
 };
 

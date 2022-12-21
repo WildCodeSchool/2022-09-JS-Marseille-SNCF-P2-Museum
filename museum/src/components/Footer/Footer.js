@@ -12,7 +12,7 @@ const Footer = () => {
       alignItems="center"
       spacing={2}
       mt={3}
-      sx={{ maxWidth:  "1200px" }}
+      sx={{ maxWidth: "1200px" }}
     >
       <FooterContent />
       <FooterLegacy />
