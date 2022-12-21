@@ -18,6 +18,7 @@ function SearchBar({ BGcolor }) {
         backgroundColor: "backgroundGallery.main",
         color: "primary.main",
       }}
+      id="startGallery"
     >
       <Typography variant="galeryH2" gutterBottom>
         Planifiez votre visite
