@@ -52,9 +52,9 @@ function GalleryButton(props) {
    const handleChangePage=(event,page) => {
      setPage(page);
      const startGallery=document.getElementById("startGallery")
-      // window.scrollTo(0,0);
+      
      startGallery.scrollIntoView();
-       console.log({page},"button");
+      
    }
   
  
